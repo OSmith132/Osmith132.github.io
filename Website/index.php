@@ -9,7 +9,7 @@ include("classes/Feedback.class.php");
 include("classes/FeedbackView.class.php");
 include("scripts/functions.php");
 
-$Login_Controller = new LoginContr();
+
 $user_data = $Login_Controller->force_login();
 
 $Feedback_View = new FeedbackView($user_data['userID']);
