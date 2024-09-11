@@ -28,17 +28,18 @@ session_start();
 
 <body>
     <!-- Header -->
-    <?php include("header.php"); ?>
+    <?php include "header.php"; ?>
 
     <!-- Main -->
     <main class="index-main">
         <!-- Title -->
         <h1>Welcome to Oliver Smith's website</h1>
 
+        <!-- Footer -->
+    <?php include "footer.php"; ?>
 
-
-
-    <!-- Footer -->
-    <?php include("footer.php"); ?>
 </body>
+
+    
+
 </html>

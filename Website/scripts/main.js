@@ -25,9 +25,9 @@ function setColourMode(lightMode) {
 
     if (lightMode) {
         // ENABLE LIGHT MODE
-        root.style.setProperty("--background", "#f0e5d8");
-        // root.style.setProperty("--header", "#293535");
-        // root.style.setProperty("--text", "#424242");
+        root.style.setProperty("--background", "#f5ede4");
+        root.style.setProperty("--header", "#313c3c");
+        root.style.setProperty("--text", "#535353");
         // root.style.setProperty("--alternate-text", "white");
         // root.style.setProperty("--header-button", "#e7d8c9");
         // root.style.setProperty("--header-light", "#879183");
@@ -46,13 +46,13 @@ function setColourMode(lightMode) {
         // Update local storage
         localStorage.setItem("colourMode", "light");
 
-        
+
     } else {
 
         // ENABLE DARK MODE
         root.style.setProperty("--background", "#8f958f");
-        // root.style.setProperty("--header", "#293535");
-        // root.style.setProperty("--text", "#424242");
+         root.style.setProperty("--header", "#293535");
+         root.style.setProperty("--text", "#424242");
         // root.style.setProperty("--alternate-text", "white");
         // root.style.setProperty("--header-button", "#e7d8c9");
         // root.style.setProperty("--header-light", "#879183");
