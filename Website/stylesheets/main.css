@@ -2,17 +2,19 @@
 /* EVERYWHERE */
 /* ---------- */
 
+/* a {border: solid rgb(255, 0, 221) 2px; }
+div {border: solid rgb(255, 0, 221) 2px; } */
+
 :root {
     /* !!! WARNING: These are overridden in main.js -> setColourMode(lightMode) !!! */
-    --a: #111;
-    --b: #222;
-    --c: #333;
-    --d: #444;
-    --e: #666;
-    --f: #aaa;
-    --g: #eee;
-    --accent-bright: deeppink;
-    --accent-pale: #ff80c3;
+
+    --background: #f0e5d8;
+    --header: #293535;    
+    --text: #424242;
+    --alternate-text: white;
+    --header-button: #e7d8c9;
+    --header-light: #879183;
+    
 }
 
 .rubik-font {
@@ -23,17 +25,20 @@
 }
 
 body {
-    background-color: var(--c);
-    color: var(--g);
+    background-color: var(--background);
+    color: var(--text);
     display: flex;
     flex-direction: column;
     font-family: "Rubik", sans-serif;
     margin: 0;
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
 }
 
 ::selection {
-    background-color: var(--accent-bright);
+    background-color: #8f958f;
+    color: var(--header);
 }
 
 .accent-button {
@@ -60,68 +65,83 @@ body {
 /* ------ */
 
 header {
-    background-color: var(--a);
-    border-bottom: 1px solid var(--e);
+    background-color: var(--header);
     display: flex;
     justify-content: space-between;
-    padding: 16px;
-}
-
-.header-box {
-    align-items: center;
-    display: flex;
+    align-items: center; 
+    padding: 11px;
     gap: 16px;
+    transition: background-color 0.3s;
 }
 
 .header-logo {
     align-items: center;
     color: inherit;
     display: flex;
-    gap: 8px;
+    padding: 5px;
+    gap: 5px;
+    border-radius: 6px;
+    transition: background-color 0.3s, border-color 0.3s;
     text-decoration: none;
 }
 
 .header-logo:hover {
-    text-decoration: underline;
+    background-color: var(--header-light); /* Slight hover effect */
+    text-decoration: none;
 }
 
 .header-logo-text {
-    font-weight: bold;
-    margin: 0;
+    font-weight: 500;
+    color: var(--alternate-text);
+    font-style: normal;
+    text-decoration: none;
 }
 
-.header-button {
-    background-color: var(--b);
-    border: 1px solid var(--e);
-    border-radius: 8px;
-    color: inherit;
-    height: 32px;
-    position: relative;
-    transition: background-color 0.3s;
-    width: 32px;
+.header-box{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: flex-start;
 }
+
+/* General Button Styling */
+.header-button {
+    background-color: var(--header); 
+    border: 2px solid var(--header-light); 
+    border-radius: 20%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, border-color 0.3s;
+    padding: 3px;
+}
+
 
 .header-button:hover {
-    background-color: var(--c);
+    background-color: var(--header-light); /* Slight hover effect */
 }
+
+/* Icon Styling */
+.header-button i {
+    color: var(--header-button); /* Icon color matching text color */
+    font-size: 18px; /* Set the icon size */
+}
+
+
 
 .header-button-pointer {
     cursor: pointer;
 }
 
 .header-button-badge {
-    background-color: var(--accent-bright);
+    background-color: var(--header-light);
     border-radius: 4px;
     padding: 2px 4px;
     position: absolute;
     right: -4px;
     top: -4px;
-}
-
-.header-profile-picture {
-    border: 1px solid var(--e);
-    border-radius: 50%;
-    display: block;
 }
 
 .header-dropdown {
@@ -130,8 +150,7 @@ header {
 }
 
 .header-dropdown-content {
-    background-color: var(--b);
-    border: 1px solid var(--e);
+    background-color: var(--text);
     border-radius: 8px;
     display: none;
     padding: 8px;
@@ -142,7 +161,7 @@ header {
 }
 
 .header-dropdown-content button {
-    background-color: var(--c);
+    background-color: var(--header-button);
     border: none;
     border-radius: 8px;
     color: inherit;
@@ -154,7 +173,7 @@ header {
 }
 
 .header-dropdown-content button:hover {
-    background-color: var(--d);
+    background-color: var(--text);
 }
 
 .header-dropdown:hover .header-dropdown-content {
@@ -168,31 +187,23 @@ header {
 /* ---- */
 
 main {
-    background-color: var(--b);
-    border: 1px solid var(--e);
+    background-color: var(--text);
+    color: var(--alternate-text);
     border-radius: 8px;
     margin: 16px 16px auto;
     padding: 16px;
     text-align: center;
 }
 
-main a {
-    color: inherit;
-    text-decoration: none;
-}
-
-main a:hover {
-    text-decoration: underline;
-}
 
 /* ------ */
 /* FOOTER */
 /* ------ */
 
 footer {
-    background-color: var(--a);
-    border-top: 1px solid var(--e);
-    color: var(--f);
+    background-color: var(--header);
+    border-top: 1px solid var(--header-button);
+    color: var(--header-light);
     display: flex;
     gap: 32px;
     justify-content: center;
@@ -213,80 +224,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ---- */
-/* TAGS */
-/* ---- */
 
-.urgency-tag {
-    border-radius: 4px;
-    cursor: default;
-    font-size: 12px;
-    padding: 2px 4px;
-}
-
-.tag {
-    border-radius: 4px;
-    cursor: default;
-    padding: 4px 8px;
-}
-
-/* This does NOT affect urgency tags, just "normal" tags :) */
-table .tag {
-    background: none;
-    border-color: var(--d);
-    border-radius: 2px;
-    color: var(--f);
-    font-size: 12px;
-    padding: 2px 4px;
-}
-
-.tag-low {
-    background-color: rgb(0%, 50%, 0%);
-    border: 1px solid rgb(0%, 100%, 0%);
-    color: rgb(0%, 100%, 0%);
-}
-
-.tag-medium {
-    background-color: rgb(50%, 50%, 0%);
-    border: 1px solid rgb(100%, 100%, 0%);
-    color: rgb(100%, 100%, 0%);
-}
-
-.tag-high {
-    background-color: rgb(50%, 25%, 0%);
-    border: 1px solid rgb(100%, 50%, 0%);
-    color: rgb(100%, 50%, 0%);
-}
-
-.tag-critical {
-    background-color: rgb(50%, 0%, 0%);
-    border: 1px solid rgb(100%, 0%, 0%);
-    color: rgb(100%, 0%, 0%);
-}
-
-.tag-open {
-    background-color: rgb(25%, 50%, 25%);
-    border: 1px solid rgb(25%, 100%, 25%);
-    color: rgb(25%, 100%, 25%);
-}
-
-.tag-closed {
-    background-color: rgb(50%, 25%, 25%);
-    border: 1px solid rgb(100%, 25%, 25%);
-    color: rgb(100%, 25%, 25%);
-}
-
-.tag-unresolved {
-    background-color: rgb(50%, 50%, 25%);
-    border: 1px solid rgb(100%, 100%, 25%);
-    color: rgb(100%, 100%, 25%);
-}
-
-.tag-resolved {
-    background-color: rgb(25%, 50%, 50%);
-    border: 1px solid rgb(25%, 100%, 100%);
-    color: rgb(25%, 100%, 100%);
-}
 
 /* ----- */
 /* INDEX */
@@ -333,320 +271,4 @@ table .tag {
 .index-search-bar:focus {
     border-color: var(--accent-bright);
     outline: none;
-}
-
-/* -------- */
-/* UNSORTED */
-/* -------- */
-
-.feedback404-main {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.table-status {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.feedback-toolbar {
-    display: flex;
-    justify-content: space-between;
-}
-
-.feedback-toolbar-box {
-    align-items: start;
-    display: flex;
-    gap: 8px;
-}
-
-h1, h2, p {
-    margin: 0;
-}
-
-table, th, td {
-    border: 1px solid var(--d);
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 8px;
-}
-
-th, tr:hover {
-    background-color: var(--c);
-}
-
-.avatar {
-    border-radius: 16px;
-}
-
-.form {
-    color: var(--g);
-    text-align: center;
-    width: 50%;
-    margin: auto;
-    border-radius: 10px;
-    padding: 16px;
-    background-color: var(--a);
-    border-bottom: 1px solid var(--d);
-
-    /* Use a flexbox instead of hardcoding <br> tags */
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.form form {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form form label {
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-}
-
-.form form label label {
-    font-weight: normal;
-    display: inline;
-}
-
-.form input[type="submit"] {
-    color: var(--g);
-    background-color: var(--accent-bright);
-    border-radius: 8px;
-    font-weight: bold;
-    padding: 4px;
-    cursor: pointer;
-    border: none;
-    
-    transition: background-color 0.3s ease;
-}
-
-.form input[type="submit"]:hover {
-    background-color: var(--accent-pale);
-    cursor: pointer;
-}
-
-.form input:focus {
-    outline-color: var(--accent-bright);
-    outline-style: solid;
-    transition: outline-color 0.3s ease;
-}
-
-.form select:focus {
-    outline-color: var(--accent-bright);
-    outline-style: solid;
-    transition: outline-color 0.3s ease;
-}
-
-.feedback-header {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-}
-
-.feedback-header button {
-    background-color: var(--accent-bright);
-    border: none;
-    border-radius: 8px;
-    color: var(--g);
-    font-size: 16px;
-    padding: 8px;
-    transition: background-color 0.3s ease;
-}
-
-.feedback-header button:hover {
-    background-color: var(--accent-pale);
-    cursor: pointer;
-}
-
-.feedback-main {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 16px;
-    text-align: left;
-}
-
-.feedback-comment {
-    background-color: var(--a);
-    border-radius: 8px;
-    border: 1px solid var(--d);
-    color: var(--f);
-    flex-grow: 1;
-    font-size: 16px;
-    padding: 8px;
-    transition: outline-color 1s ease;
-}
-
-.feedback-closed {
-    font-size: 24px;
-    text-align: center;
-    color: var(--accent-bright);
-    top: 50%;
-    left: 50%;
-    height: 50px;
-    transform: translate(0, 10px);
-}
-
-.feedback-comment:focus {
-    border-color: var(--accent-bright);
-    outline-style: solid;
-}
-
-.comment {
-    border-radius: 8px;
-    border: 1px solid var(--d);
-}
-
-.comment-header {
-    padding: 16px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom: 1px solid var(--d);
-    background-color: var(--c);
-}
-
-.comment-content {
-    border-radius: 8px;
-    padding: 16px;
-}
-
-.inbox-header {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    gap: 16px;
-    width: 100%;
-    padding-top: 32px;
-    padding-bottom: 16px;
-}
-
-
-.inbox-header button {
-    background-color: var(--accent-bright);
-    border: none;
-    border-radius: 8px;
-    color: var(--g);
-    font-size: 16px;
-    padding: 8px 16px; /* Uniform padding */
-    transition: background-color 0.3s ease;
-}
-
-.inbox-header button:hover {
-    background-color: var(--accent-pale);
-    cursor: pointer;
-}
-
-.inbox-content {
-    margin: 16px auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 16px;
-    align-items: center;
-    text-align: center;
-}
-
-.profile-content {
-    display: flex;
-    text-align: left;
-    background-color: var(--a);
-    color: var(--g);
-}
-
-.user-picture {
-    padding: 10px;
-    flex: 1;
-    border-right: 1px solid var(--g);
-}
-
-.user-description {
-    padding: 10px;
-    flex: 1;
-    border-right: 1px solid var(--g);
-}
-
-.user-data {
-    padding: 10px;
-    flex: 1;
-}
-
-.edit-profile {
-    display: flex;
-    background-color: var(--a);
-    border-top: 1px solid var(--g);
-    border-bottom: 1px solid var(--d);
-    color: var(--g);
-}
-
-.change-picture {
-    padding: 10px;
-    flex: 1;
-}
-
-.edit-description {
-    padding: 10px;
-    flex: 1;
-}
-
-.settings {
-    text-align: center;
-    width: 33%;
-    margin: auto;
-    border-radius: 10px;
-    padding: 30px;
-    background-color: var(--a);
-    border-bottom: 1px solid var(--d);
-}
-
-.popup-form {
-    color: var(--g);
-    text-align: center;
-    width: 33%;
-    margin: auto;
-    border-radius: 10px;
-    padding: 30px;
-    background-color: var(--a);
-    border-bottom: 1px solid var(--d);
-    visibility: hidden;
-    opacity: 0;
-    box-shadow: 2px 2px 5px var(--a);
-    transition: opacity 0.5s ease;
-}
-
-.popup-form button {
-    color: var(--g);
-    background-color: var(--accent-bright);
-    width: 30%;
-    border-radius: 8px;
-    padding: 4px;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s ease;
-}
-
-.popup-form button:hover {
-    background-color: var(--accent-pale);
-    cursor: pointer;
-}
-
-.popup-form input:focus {
-    outline-color: var(--accent-bright);
-    outline-style: solid;
-    transition: outline-color 0.3s ease;
-}
-
-.popup-form select:focus {
-    outline-color: var(--accent-bright);
-    outline-style: solid;
-    transition: outline-color 0.3s ease;
 }

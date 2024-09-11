@@ -8,51 +8,61 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Set dark/light mode
+function toggleColourMode() {
+    const currentMode = localStorage.getItem("colourMode");
+    if (currentMode === "light") {
+        setColourMode(false); // Switch to dark mode
+    } else {
+        setColourMode(true); // Switch to light mode
+    }
+}
+
+// Set dark/light mode
 function setColourMode(lightMode) {
     const root = document.querySelector(":root");
-
     const headerIcon = document.getElementById("header-icon");
     const colourModeButton = document.getElementById("colour-mode-button");
 
     if (lightMode) {
         // ENABLE LIGHT MODE
-
-        // Update root variables
-        root.style.setProperty("--a", "#eee");
-        root.style.setProperty("--b", "#ddd");
-        root.style.setProperty("--c", "#ccc");
-        root.style.setProperty("--d", "#bbb");
-        root.style.setProperty("--e", "#999");
-        root.style.setProperty("--f", "#555");
-        root.style.setProperty("--g", "#111");
+        root.style.setProperty("--background", "#f0e5d8");
+        // root.style.setProperty("--header", "#293535");
+        // root.style.setProperty("--text", "#424242");
+        // root.style.setProperty("--alternate-text", "white");
+        // root.style.setProperty("--header-button", "#e7d8c9");
+        // root.style.setProperty("--header-light", "#879183");
+        
+    
 
         // Update header icon
-        headerIcon.style.filter = "invert(1)";
+        if (headerIcon) {
+            headerIcon.style.filter = "invert(1)";
+        }
 
         // Update toggle button
-        colourModeButton.setAttribute("onclick", "setColourMode(false)")
         colourModeButton.setAttribute("title", "Enable Dark Mode");
         colourModeButton.innerHTML = "<i class='fa-solid fa-moon'></i>";
 
         // Update local storage
         localStorage.setItem("colourMode", "light");
-    } else {
-        // ENABLE DARK MODE
 
-        // Update root variables
-        root.style.setProperty("--a", "#111");
-        root.style.setProperty("--b", "#222");
-        root.style.setProperty("--c", "#333");
-        root.style.setProperty("--d", "#444");
-        root.style.setProperty("--e", "#666");
-        root.style.setProperty("--f", "#aaa");
-        root.style.setProperty("--g", "#eee");
+        
+    } else {
+
+        // ENABLE DARK MODE
+        root.style.setProperty("--background", "#8f958f");
+        // root.style.setProperty("--header", "#293535");
+        // root.style.setProperty("--text", "#424242");
+        // root.style.setProperty("--alternate-text", "white");
+        // root.style.setProperty("--header-button", "#e7d8c9");
+        // root.style.setProperty("--header-light", "#879183");
 
         // Update header icon
-        headerIcon.style.filter = null;
+        if (headerIcon) {
+            headerIcon.style.filter = null;
+        }
 
         // Update toggle button
-        colourModeButton.setAttribute("onclick", "setColourMode(true)")
         colourModeButton.setAttribute("title", "Enable Light Mode");
         colourModeButton.innerHTML = "<i class='fa-solid fa-sun'></i>";
 
@@ -61,30 +71,16 @@ function setColourMode(lightMode) {
     }
 }
 
-// Heart button functions
-function like() {
-    let button = document.getElementById("heart-toggle");
-    let content = document.getElementById("heart-symbol");
+// On page load, set the colour mode based on local storage
+document.addEventListener("DOMContentLoaded", function() {
+    if (localStorage.getItem("colourMode") === "light") {
+        setColourMode(true);
+    } else {
+        setColourMode(false);
+    }
+});
 
 
-    button.title = "Unlike"
-    //content.className = "fa-solid fa-heart";
-
-    button.onclick = unlike;
-    document.getElementById("like_post").click()
-}
-
-function unlike() {
-    let button = document.getElementById("heart-toggle");
-    let content = document.getElementById("heart-symbol");
-
-
-    button.title = "Like"
-    //content.className = "fa-regular fa-heart";
-
-    button.onclick = like;
-    document.getElementById("like_post").click()
-}
 
 // For making table rows with an href clickable
 function clickableRow() {
