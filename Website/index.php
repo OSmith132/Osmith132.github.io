@@ -32,7 +32,7 @@ session_start();
 
     <!-- Main -->
     <main class="index-main">
-        <!-- Title -->
+       
         <h1>Welcome to Oliver Smith's website</h1>
 
     </main>

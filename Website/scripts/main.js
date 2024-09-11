@@ -26,7 +26,7 @@ function setColourMode(lightMode) {
     if (lightMode) {
         // ENABLE LIGHT MODE
         root.style.setProperty("--background", "#f5ede4");
-        root.style.setProperty("--header", "#313c3c");
+        root.style.setProperty("--header", "#546666");
         root.style.setProperty("--text", "#535353");
         // root.style.setProperty("--alternate-text", "white");
         // root.style.setProperty("--header-button", "#e7d8c9");
