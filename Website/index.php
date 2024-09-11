@@ -35,6 +35,7 @@ session_start();
         <!-- Title -->
         <h1>Welcome to Oliver Smith's website</h1>
 
+    </main>
         <!-- Footer -->
     <?php include "footer.php"; ?>
 
