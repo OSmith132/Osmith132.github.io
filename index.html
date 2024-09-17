@@ -1,61 +1,86 @@
 <!DOCTYPE html> 
 <html lang="en-gb">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Oliver Smith</title>
-    <meta name="description" content="Oliver Smith's personal website">
-    <meta name="author" content="Oliver Smith">
+        <title>Oliver Smith</title>
+        <meta name="description" content="Oliver Smith's personal website">
+        <meta name="author" content="Oliver Smith">
 
-    <!-- Link to fonts & assets used -->
-    <link rel="icon" type="image/x-icon" href="assets/icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7e1870387e.js" crossorigin="anonymous"></script>
+        <!-- Link to assets used -->
+        <link rel="icon" type="image/x-icon" href="assets/leaf-icon.png">
+        <script src="https://kit.fontawesome.com/7e1870387e.js" crossorigin="anonymous"></script>
 
+        <!-- Link to fonts used -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-    <!-- Link to Stylesheet -->
-    <link rel="stylesheet" href="stylesheets/main.css">
-
-    
-    <!-- Script to load header and footer functionality -->
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous">
-    </script>
-
-    <script> 
-    $(function(){
-    $("#header").load("header.html"); 
-    $("#footer").load("footer.html"); 
-    });
-    </script> 
-
-</head>
-
-
-<body>
-    <!-- Header -->
-    <div id="header"></div>
-
-
-    <!-- Main -->
-    <main class="index-main">
-       
-        <h1>Welcome to Oliver Smith's website</h1>
-
-    </main>
+        
 
     
-        <!-- Footer -->
-    <div id="footer"></div>
+        <!-- Link to Stylesheet -->
+        <link rel="stylesheet" href="stylesheets/main.css">
 
-</body>
+        
+        <!-- Script to load header and footer functionality -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+        </script>
 
+        <script> 
+        $(function(){
+        $("#header").load("header.html"); 
+        $("#footer").load("footer.html"); 
+        });
+        </script> 
+
+    </head>
+
+
+    <body>
+        <!-- Header -->
+        <div id="header"></div>
+
+
+        <!-- Main  -->
+        <!-- Ideas: Feedtrac, GTIS, Certifications, Minesweeper game popup, certifications, api for certs/leetcode/repos,  MOBILE SUPPORT, uni work (UX / minesweeper / snake / ) -->
     
+        
+        <main class="index-main">
+
+            <!-- Image of myself -->
+            <img id="index-image" alt="Image of myself">
+
+            <!-- Retrieve random image of myself -->
+            <script>
+                const imagePath = "assets/index-image-" + Math.floor(Math.random() * 3) + ".png";
+                document.getElementById('index-image').src = imagePath;
+            </script>
+
+
+            <!-- Info about myself  -->
+            <div class="index-main-textbox">
+                <b><h1>My name is Oliver Smith.</h1></b>
+                <p>I am a third year computer science student at the University of Lincoln with a keen interest for software development and artificial intelligence. A proven ability for fast-paced, hands-on learning and commitment to acquiring and applying new skills. 
+
+                    Actively seeking a masters degree in computer science to help kickstart my future career.</p>
+
+                <p>Feel free to explore my website to learn more about me and my projects.</p>
+
+            </div>
+            
+            
+        </main>
+
+        
+            <!-- Footer -->
+        <div id="footer"></div>
+
+    </body>
 
 </html>
