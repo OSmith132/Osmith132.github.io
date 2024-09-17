@@ -92,7 +92,6 @@ function clickableRow() {
     });
 }
 
-//Settings.php popup form
 //Open form
 function openForm(formID) {
     document.getElementById(formID).style.visibility = "visible"
