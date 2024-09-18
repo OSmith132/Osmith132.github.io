@@ -277,7 +277,7 @@ footer a:hover {
     
     color: var(--alternate-text);
 
-    transform: translate(-25%, -50%); /* Center the text */
+    transform: translate(-25%, -50%);
     z-index: 2; /* Ensures the text appears above the image */
 
     transition: background-color 0.3s, box-shadow 0.3s ease-in-out;
@@ -296,9 +296,7 @@ footer a:hover {
     width: 100%;
     object-fit: cover; /* Ensures the image covers the container */
     z-index: 1;
-
-  
+    box-shadow: 0 4px 8px rgba(10, 10, 10, 0.25);
 }
-
 
 
