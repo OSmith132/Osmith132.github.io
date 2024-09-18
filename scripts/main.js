@@ -1,19 +1,19 @@
 // Set colour mode based on local storage (defaults to dark mode)
 document.addEventListener("DOMContentLoaded", function() {
-    if (localStorage.getItem("colourMode") === "light") {
-        setColourMode(true);
-    } else {
+    if (localStorage.getItem("colourMode") === "dark") {
         setColourMode(false);
+    } else {
+        setColourMode(true);
     }
 });
 
 // Set dark/light mode
 function toggleColourMode() {
     const currentMode = localStorage.getItem("colourMode");
-    if (currentMode === "light") {
-        setColourMode(false); // Switch to dark mode
-    } else {
+    if (currentMode === "dark") {
         setColourMode(true); // Switch to light mode
+    } else {
+        setColourMode(false); // Switch to dark mode
     }
 }
 
@@ -23,7 +23,32 @@ function setColourMode(lightMode) {
     const headerIcon = document.getElementById("header-icon");
     const colourModeButton = document.getElementById("colour-mode-button");
 
-    if (lightMode) {
+    if (!lightMode) {
+
+        // ENABLE DARK MODE
+        root.style.setProperty("--background", "#8f958f");
+        //  root.style.setProperty("--header", "#293535");
+         root.style.setProperty("--text", "#424242");
+        // root.style.setProperty("--alternate-text", "white");
+        // root.style.setProperty("--header-button", "#e7d8c9");
+        // root.style.setProperty("--header-light", "#879183");
+
+        // Update header icon
+        if (headerIcon) {
+            headerIcon.style.filter = null;
+        }
+
+        // Update toggle button
+        colourModeButton.setAttribute("title", "Enable Light Mode");
+        colourModeButton.innerHTML = "<i class='fa-solid fa-sun'></i>";
+
+        // Update local storage
+        localStorage.setItem("colourMode", "dark");
+        
+
+
+    } else {
+
         // ENABLE LIGHT MODE
         root.style.setProperty("--background", "#f5ede4");
         // root.style.setProperty("--header", "#546666");
@@ -45,38 +70,15 @@ function setColourMode(lightMode) {
 
         // Update local storage
         localStorage.setItem("colourMode", "light");
-
-
-    } else {
-
-        // ENABLE DARK MODE
-        root.style.setProperty("--background", "#8f958f");
-        //  root.style.setProperty("--header", "#293535");
-         root.style.setProperty("--text", "#424242");
-        // root.style.setProperty("--alternate-text", "white");
-        // root.style.setProperty("--header-button", "#e7d8c9");
-        // root.style.setProperty("--header-light", "#879183");
-
-        // Update header icon
-        if (headerIcon) {
-            headerIcon.style.filter = null;
-        }
-
-        // Update toggle button
-        colourModeButton.setAttribute("title", "Enable Light Mode");
-        colourModeButton.innerHTML = "<i class='fa-solid fa-sun'></i>";
-
-        // Update local storage
-        localStorage.setItem("colourMode", "dark");
     }
 }
 
 // On page load, set the colour mode based on local storage
 document.addEventListener("DOMContentLoaded", function() {
-    if (localStorage.getItem("colourMode") === "light") {
-        setColourMode(true);
-    } else {
+    if (localStorage.getItem("colourMode") === "dark") {
         setColourMode(false);
+    } else {
+        setColourMode(true);
     }
 });
 
