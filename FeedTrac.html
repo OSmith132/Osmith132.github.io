@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html lang="en-gb">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Oliver Smith</title>
+        <meta name="description" content="Oliver Smith's personal website">
+        <meta name="author" content="Oliver Smith">
+
+        <!-- Link to assets used -->
+        <link rel="icon" type="image/x-icon" href="assets/leaf-icon.png">
+        <script src="https://kit.fontawesome.com/7e1870387e.js" crossorigin="anonymous"></script>
+
+        <!-- Link to fonts used -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        
+
+    
+        <!-- Link to Stylesheet -->
+        <link rel="stylesheet" href="stylesheets/main.css">
+
+        
+        <!-- Script to load header and footer functionality -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+        </script>
+
+        <script> 
+        $(function(){
+        $("#header").load("header.html"); 
+        $("#footer").load("footer.html"); 
+        });
+        </script> 
+
+    </head>
+
+
+    <body>
+        <!-- Header -->
+        <div id="header"></div>
+
+
+        <!-- Main  -->
+        <main>
+            <h1>Feedtrac page</h1>
+        </main>
+
+        
+            <!-- Footer -->
+        <div id="footer"></div>
+
+    </body>
+
+</html>

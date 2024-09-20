@@ -1,5 +1,6 @@
 // Set colour mode based on local storage (defaults to dark mode)
 document.addEventListener("DOMContentLoaded", function() {
+
     if (localStorage.getItem("colourMode") === "dark") {
         setColourMode(false);
     } else {

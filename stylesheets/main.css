@@ -2,19 +2,19 @@
 /* EVERYWHERE */
 /* ---------- */
 
-/* a {border: solid rgb(255, 0, 221) 2px; }
-div {border: solid rgb(255, 0, 221) 2px; } */
+ /* a {border: solid rgb(255, 0, 221) 2px; }
+div {border: solid rgb(255, 0, 221) 2px; } 
+main {border: solid rgb(255, 0, 221) 2px; } */
 
 :root {
     /* !!! WARNING: These are overridden in main.js -> setColourMode(lightMode) !!! */
-
+    /* Default colours */
     --background: #f0e5d8;
     --header: #293535;    
-    --text: #535353;
+    --text: #444444;
     --alternate-text: white;
     --header-button: #e7d8c9;
     --header-light: #879183;
-    
 }
 
 body {
@@ -22,7 +22,7 @@ body {
     color: var(--text);
     display: flex;
     flex-direction: column;
-    font-family: "Rubik", sans-serif;
+    font-family: sans-serif;
     margin: 0;
     min-height: 100vh;
     height: 100%;
@@ -38,11 +38,11 @@ body {
 .accent-button {
     background-color: var(--accent-bright);
     border: none;
-    border-radius: 4px;
+    border-radius: 1vh;
     color: inherit;
     cursor: pointer;
     font: inherit;
-    padding: 8px 16px;
+    padding: 4vh 8vh;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .accent-button-wide {
-    width: 320px;
+    width: 7vh;
 }
 
 /* ------ */
@@ -68,7 +68,7 @@ header {
     transition: background-color 0.3s, border-color 0.3s;
     box-sizing: border-box;
     height: 7vh;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
 }
 
 .header-logo {
@@ -77,7 +77,7 @@ header {
     display: flex;
     padding: 1vh;
     gap: 1vh;
-    border-radius: 6px;
+    border-radius: 1vh;
     transition: background-color 0.3s, border-color 0.3s;
     text-decoration: none;
 
@@ -159,6 +159,7 @@ footer {
     box-sizing: border-box;
     height:6vh;
     align-items: center;
+    margin: 5vh auto auto auto;
 
 
     /* For a sticky footer */
@@ -195,12 +196,13 @@ footer a:hover {
     height: 5vh;
     width: auto;
 
--webkit-animation-duration: 1s;
+  -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
+
   
 }
 
@@ -224,9 +226,9 @@ footer a:hover {
 }
 
 .footer-leaf:hover {
-  cursor: pointer;
-  animation-name: bounce;
-  -moz-animation-name: bounce;
+    cursor: pointer;
+    animation-name: bounce;
+    -moz-animation-name: bounce;
 }
 
 
@@ -240,10 +242,10 @@ footer a:hover {
 /* INDEX */
 /* ----- */
 
-.index-main {
+.index-main-title {
     align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     
     margin: 5vh auto auto;
     transition: background-color 0.3s, border-color 0.3s;
@@ -251,16 +253,17 @@ footer a:hover {
     height: 50vh;
     width: 50vw;
 
+   
+
     position: relative;
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
-
 }
 
-.index-main-textbox {
+.index-main-title-textbox {
     background-color: rgba(83, 83, 83, 0.8);
 
-     
+    backdrop-filter: blur(0.2vh); /* Blur effect */
 
     color: var(--alternate-text);
     border-radius: 2vh;
@@ -268,35 +271,144 @@ footer a:hover {
     padding: 2vh;
     text-align: left;
 
-    font-size: 2.5vh;
+    font-size: 2vh;
     width: 80%;
+    max-height: 80%;
 
-    position: absolute; /* To overlap the image */
-    top: 50%; 
-    left: 50%;
+    position: absolute;
+    left: 25%;
     
     color: var(--alternate-text);
 
-    transform: translate(-25%, -50%);
+    
     z-index: 2; /* Ensures the text appears above the image */
 
     transition: background-color 0.3s, box-shadow 0.3s ease-in-out;
+
+    animation-delay: 0.3s;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
 }
 
-.index-main-textbox:hover {
+/* Fade in animation */
+.fadeInBottom { animation-name: fadeInBottom }
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(2vh);
+    }
+    to { opacity: 1;}
+}
+
+.index-main-title-textbox:hover {
     background-color: rgba(83, 83, 83, 0.9);
-    box-shadow: 0 4px 8px rgba(10, 10, 10, 0.5);
-   
-    
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.5);
 }
 
-.index-main img {
+.index-main-title img {
     border-radius: 2vh;
     height: 100%;
     width: 100%;
     object-fit: cover; /* Ensures the image covers the container */
     z-index: 1;
-    box-shadow: 0 4px 8px rgba(10, 10, 10, 0.25);
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.25);
+
+    position: absolute;
+
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+
+    
 }
+
+/* ------------- */
+/* INDEX SHOWCASE*/
+/* ------------- */
+
+/* Main container for the project showcase */
+.index-main-showcase {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Two equal columns */
+    grid-template-rows: 1fr 1fr; /* Two rows for title and description */
+    
+    height: 45vh;
+    width: 85vw;
+    margin: 10vh auto; /* Centers the grid */
+    position: relative;
+    background-color: var(--alternate-text);
+    /* border: 0.1vh solid rgb(10, 10, 10); */
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.25);
+    border-radius: 2vh;
+    grid-template-rows: 0.25fr 1.75fr;
+
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s ease-in-out;
+}
+
+/* Image styling, taking up the left column */
+.index-main-showcase img {
+    grid-column: 1 / 2; /* Span only the first column */
+    grid-row: 1 / 4; /* Span both rows */
+    width: 90%;
+    height: 90%;
+    border-radius: 2vh;
+    margin: 1vh;
+    padding: 1vh;
+    background-color: rgba(83, 83, 83, 0.2);
+    align-self: center; /* Center the title vertically */
+    justify-self: center; /* Center the title horizontally */
+
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.1);
+}
+
+/* Title styling, taking up the top-right row */
+.index-main-showcase-title {
+    grid-column: 2 / 3; /* Take the second column */
+    grid-row: 1 / 2; /* Only the first row */
+    font-size: 3vh;
+    font-weight: 600;
+    display: flex;
+    align-items: center; /* Center the title vertically */
+    justify-content: center; /* Center the title horizontally */
+    width: 100%;
+    height: 100%;
+
+    text-decoration: underline;
+}
+
+/* Textbox for project info, taking up the bottom-right row */
+.index-main-showcase-textbox {
+    color: var(--text);
+    
+    grid-column: 2 / 3; /* Take the second column */
+    grid-row: 2 / 3; /* Only the second row */
+    align-items: top; /* Center the title vertically */
+    justify-content: left; /* Center the title horizontally */
+    font-size: 2.5vh;
+    border-radius: 2vh;
+    margin: 1vh;
+    padding: 1vh;
+
+    background-color: rgba(150, 150, 150, 0.2);
+
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.1);
+
+    
+    
+}
+
+.index-main-showcase:hover {
+    background-color: rgba(150,150,150, 0.3);
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.5);
+    cursor: pointer;
+}
+
+.index-main-showcase:active {
+    background-color: rgba(150,150,150, 0.3);
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.15);
+    transform: translateY(1vh);
+
+}
+
+
 
 
