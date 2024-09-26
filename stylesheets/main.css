@@ -6,6 +6,10 @@
 div {border: solid rgb(255, 0, 221) 2px; } 
 main {border: solid rgb(255, 0, 221) 2px; } */
 
+div {
+    overflow: hidden;
+  }
+
 :root {
     /* !!! WARNING: These are overridden in main.js -> setColourMode(lightMode) !!! */
     /* Default colours */
@@ -67,7 +71,7 @@ header {
     gap: 2vh;
     transition: background-color 0.3s, border-color 0.3s;
     box-sizing: border-box;
-    height: 7vh;
+    height: 6vh;
     box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
 }
 
@@ -250,8 +254,8 @@ footer a:hover {
     margin: 5vh auto auto;
     transition: background-color 0.3s, border-color 0.3s;
 
-    height: 50vh;
-    width: 50vw;
+    height: 45vh;
+    width: 45vw;
 
    
 
@@ -271,7 +275,7 @@ footer a:hover {
     padding: 2vh;
     text-align: left;
 
-    font-size: 2vh;
+    font-size: 1.5vh;
     width: 80%;
     max-height: 80%;
 
@@ -321,50 +325,128 @@ footer a:hover {
     
 }
 
-/* ------------- */
-/* INDEX SHOWCASE*/
-/* ------------- */
+/* -------------- */
+/* INDEX SHOWCASE */
+/* -------------- */
 
 /* Main container for the project showcase */
 .index-main-showcase {
     display: grid;
-    grid-template-columns: 1fr 3fr; /* Two equal columns */
-    grid-template-rows: 1fr 1fr; /* Two rows for title and description */
+    grid-template-columns: 35vh auto;
+    grid-template-rows: 1fr 1fr;
     
-    height: 45vh;
-    width: 85vw;
-    margin: 10vh auto; /* Centers the grid */
+    height: 35vh;
+    width: 75vw;
+    margin: 10vh auto;
     position: relative;
     background-color: var(--alternate-text);
-    /* border: 0.1vh solid rgb(10, 10, 10); */
     box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.25);
     border-radius: 2vh;
     grid-template-rows: 0.25fr 1.75fr;
-
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s ease-in-out;
+
+    animation-delay: 1s;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
 }
 
-/* Image styling, taking up the left column */
-.index-main-showcase img {
+/* Slide container to contain image and textbox */
+.slide-container {
     grid-column: 1 / 2; /* Span only the first column */
     grid-row: 1 / 4; /* Span both rows */
+    border-radius: 2vh;
+    height: 100%;
+    width: 100%;
+    position: relative; /* Ensure children can position relative to this */
+    overflow: hidden; /* Hide elements sliding out of view */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.0);
+}
+
+/* --------------- */
+/* SLIDE CONTAINER */
+/* --------------- */
+
+/* Image styling */
+.slide-container-image {
     width: 90%;
     height: 90%;
     border-radius: 2vh;
     margin: 1vh;
     padding: 1vh;
     background-color: rgba(83, 83, 83, 0.2);
-    align-self: center; /* Center the title vertically */
-    justify-self: center; /* Center the title horizontally */
-
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: top 0.5s ease-in-out; /* Smooth transition */
 }
+
+/* Textbox styling */
+.slide-container .slide-container-info {
+    position: absolute;
+    bottom: -100%; /* Initially hidden out of view */
+    left: 0;
+    right: 0;
+   
+    
+    text-align: center;
+    transition: bottom 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* Hover effect */
+.slide-container:hover .slide-container-image {
+    top: -100%; /* Slide the image out of the container */
+}
+
+.slide-container:hover .slide-container-info {
+    bottom: 0; /* Slide the text div into view */
+}
+
+.slide-container-info {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(5, 1fr);
+
+    background-color: rgba(83, 83, 83, 0.2); /* Dark background */
+
+    margin: 2.5% 2.5% 2.5% 2.5%;
+
+    width: 95%;
+    height: 95%;
+    border-radius: 2vh;
+}
+
+.slide-container-info-image{
+    width: 75%;
+    height: auto;
+    grid-column: 1 / 2; /* Image occupies the first column */
+    justify-self: center; /* Center the image horizontally */
+    align-self: center; /* Center the image vertically */
+    margin: 5%;
+}
+
+.slide-container-info-text {
+    grid-column: 2 / 3; /* Text occupies the second column */
+    text-align: left; /* Align text to the left */
+    align-self: center; /* Center text vertically */
+    padding-right: 1vh;
+    font-size: 1.5vh;
+    color: var(--text);
+}
+
+
+
+
+
+
 
 /* Title styling, taking up the top-right row */
 .index-main-showcase-title {
     grid-column: 2 / 3; /* Take the second column */
     grid-row: 1 / 2; /* Only the first row */
-    font-size: 3vh;
+    font-size: 2vh;
     font-weight: 600;
     display: flex;
     align-items: center; /* Center the title vertically */
@@ -383,7 +465,7 @@ footer a:hover {
     grid-row: 2 / 3; /* Only the second row */
     align-items: top; /* Center the title vertically */
     justify-content: left; /* Center the title horizontally */
-    font-size: 2.5vh;
+    font-size: 1.5vh;
     border-radius: 2vh;
     margin: 1vh;
     padding: 1vh;
@@ -408,6 +490,8 @@ footer a:hover {
     transform: translateY(1vh);
 
 }
+
+
 
 
 
