@@ -16,7 +16,7 @@ div {
 
 
 :root {
-    /* !!! WARNING: These are overridden in main.js -> setColourMode(lightMode) !!! */
+    /* Some of these are overridden in main.js -> setColourMode(lightMode) */
     /* Default colours */
     --background: #f0e5d8;
     --header: #293535;    
@@ -24,6 +24,11 @@ div {
     --alternate-text: white;
     --header-button: #e7d8c9;
     --header-light: #879183;
+}
+
+::selection {
+    background-color: #8f958f;
+    color: var(--header);
 }
 
 body {
@@ -39,29 +44,6 @@ body {
 }
 
 
-::selection {
-    background-color: #8f958f;
-    color: var(--header);
-}
-
-.accent-button {
-    background-color: var(--accent-bright);
-    border: none;
-    border-radius: 1vh;
-    color: inherit;
-    cursor: pointer;
-    font: inherit;
-    padding: 4vh 8vh;
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-.accent-button:hover {
-    background-color: var(--accent-pale);
-}
-
-.accent-button-wide {
-    width: 7vh;
-}
 
 /* ------ */
 /* HEADER */
@@ -80,6 +62,7 @@ header {
     box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
 }
 
+/* Link to social Buttons */
 .header-logo {
     align-items: center;
     color: inherit;
@@ -98,7 +81,7 @@ header {
 }
 
 .header-logo:hover {
-    background-color: var(--header-light); /* Slight hover effect */
+    background-color: var(--header-light);
     text-decoration: none;
 }
 
@@ -117,7 +100,7 @@ header {
     justify-content: flex-start;
 }
 
-/* General Button Styling */
+/* Header Buttons (Light and dark) */
 .header-button {
     background-color: var(--header); 
     border: 0.3vh solid var(--header-light); 
@@ -131,25 +114,15 @@ header {
     padding: 0.2vh;
 }
 
-
 .header-button:hover {
-    background-color: var(--header-light); /* Slight hover effect */
-}
-
-/* Icon Styling */
-.header-button i {
-    color: var(--header-button); /* Icon color matching text color */
-    font-size: 2vh; /* Set the icon size */
-}
-
-
-
-.header-button-pointer {
+    background-color: var(--header-light);
     cursor: pointer;
 }
 
-
-
+.header-button i {
+    color: var(--header-button);
+    font-size: 2vh;
+}
 
 
 /* ------ */
@@ -170,14 +143,13 @@ footer {
     align-items: center;
     margin: 5vh auto auto auto;
 
-
     /* For a sticky footer */
     /* position: fixed;
     bottom: 0;
     width: 100%; */  
 }
 
-
+/* Footer text */
 footer i {
     display: flex;
     justify-content: center;
@@ -198,6 +170,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Footer icon */
 .footer-leaf {
     position: absolute;
     margin-left: 97%; /* Push the image to the far right */
@@ -210,11 +183,18 @@ footer a:hover {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-
-  
+  animation-timing-function: ease-in-out
 }
 
+.footer-leaf:hover {
+    cursor: pointer;
+    animation-name: bounce;
+    -moz-animation-name: bounce;
+}
+
+/* ---------- */
+/* ANIMATIONS */
+/* ---------- */
 
 @keyframes bounce {
 	0%, 100%, 20%, 50%, 80% {
@@ -234,17 +214,16 @@ footer a:hover {
 	}
 }
 
-.footer-leaf:hover {
-    cursor: pointer;
-    animation-name: bounce;
-    -moz-animation-name: bounce;
+.fadeInBottom {animation-name: fadeInBottom;}
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(2vh);
+    }
+    to { opacity: 1;
+         transform: translateY(0px);
+    }
 }
-
-
-
-
-
-
 
 
 /* ----- */
@@ -255,75 +234,26 @@ footer a:hover {
     align-items: center;
     display: flex;
     flex-direction: column;
-    
     margin: 5vh auto auto;
     transition: background-color 0.3s, border-color 0.3s;
-
     height: 45vh;
     width: 45vw;
-
-   
-
     position: relative;
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
-}
-
-.index-main-title-textbox {
-    background-color: rgba(83, 83, 83, 0.8);
-
-    backdrop-filter: blur(0.2vh); /* Blur effect */
-
-    color: var(--alternate-text);
-    border-radius: 2vh;
-    
-    padding: 1.5vh;
-    text-align: left;
-
-
-    font-size: 1.75vh;
-    width: 80%;
-    max-height: 80%;
-
-    position: absolute;
-    left: 25%;
-    
-    color: var(--alternate-text);
-
-    
-    z-index: 2; /* Ensures the text appears above the image */
-
-    transition: background-color 0.3s, box-shadow 0.3s ease-in-out;
-
-    animation-delay: 0.3s;
-    animation-duration: 1.2s;
-    animation-fill-mode: both;
-}
-
-/* Fade in animation */
-.fadeInBottom { animation-name: fadeInBottom }
-@keyframes fadeInBottom {
-    from {
-        opacity: 0;
-        transform: translateY(2vh);
-    }
-    to { opacity: 1;}
-}
-
-.index-main-title-textbox:hover {
-    background-color: rgba(83, 83, 83, 0.9);
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.5);
 }
 
 .index-main-title img {
     border-radius: 2vh;
     height: 100%;
     width: 100%;
+    /* left: -5%; */
     object-fit: cover; /* Ensures the image covers the container */
     z-index: 1;
     box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.25);
 
     position: absolute;
+
 
     animation-duration: 1.5s;
     animation-fill-mode: both;
@@ -331,16 +261,50 @@ footer a:hover {
     
 }
 
+.index-main-title-textbox {
+    background-color: rgba(83, 83, 83, 0.8);
+    backdrop-filter: blur(0.2vh); /* Blur effect */
+    z-index: 2; /* Ensures the text appears above the image */
+    color: var(--alternate-text);
+    border-radius: 2vh;
+    padding: 1.5vh;
+    text-align: left;
+    font-size: 2vh;
+    width: 80%;
+    max-height: 80%;
+    position: absolute;
+    left: 30%;
+    color: var(--alternate-text);
+    transition: background-color 0.3s, box-shadow 0.3s ease-in-out;
+
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    animation-delay: 0.3s;
+}
+
+.index-main-title-textbox:hover {
+    background-color: rgba(83, 83, 83, 0.9);
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.5);
+}
+
+
+
 /* -------------- */
 /* INDEX SHOWCASE */
 /* -------------- */
+
+/* Main container for projects to go in (only here to fix bug with keyframes) */
+.project-container {
+    animation-delay: 1s;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+}
 
 /* Main container for the project showcase */
 .index-main-showcase {
     display: grid;
     grid-template-columns: 35vh auto;
     grid-template-rows: 1fr 1fr;
-    
     height: 35vh;
     width: 75vw;
     margin: 10vh auto;
@@ -349,12 +313,54 @@ footer a:hover {
     box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.25);
     border-radius: 2vh;
     grid-template-rows: 0.25fr 1.75fr;
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s ease-in-out;
-
-    animation-delay: 1s;
-    animation-duration: 1.2s;
-    animation-fill-mode: both;
+    transition: background-color 0.3s, box-shadow 0.1s, transform 0.1s ease-in-out;
 }
+
+
+.index-main-showcase-title {
+    grid-column: 2; /* Take the second column */
+    grid-row: 1; /* Only the first row */
+    font-size: 3vh;
+    font-weight: 600;
+    display: flex;
+    align-items: center; /* Center the title vertically */
+    justify-content: center; /* Center the title horizontally */
+    width: 100%;
+    height: 100%;
+
+    text-decoration: underline;
+}
+
+/* Textbox for project info, taking up the bottom-right row */
+.index-main-showcase-textbox {
+    color: var(--text);
+    grid-column: 2; /* Take the second column */
+    grid-row: 2; /* Only the second row */
+    align-items: top; /* Center the title vertically */
+    justify-content: left; /* Center the title horizontally */
+    font-size: 1.75vh;
+    border-radius: 2vh;
+    margin: 1vh;
+    padding: 1vh;
+    background-color: rgba(150, 150, 150, 0.2);
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.1);
+}
+
+.index-main-showcase:hover {
+    background-color: rgba(150,150,150, 0.3);
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.5);
+    cursor: pointer;
+}
+
+.index-main-showcase:active {
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.25);
+    transform: translateY(1vh);
+}
+
+
+/* --------------- */
+/* SLIDE CONTAINER */
+/* --------------- */
 
 /* Slide container to contain image and textbox */
 .slide-container {
@@ -370,11 +376,8 @@ footer a:hover {
     box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.0);
 }
 
-/* --------------- */
-/* SLIDE CONTAINER */
-/* --------------- */
 
-/* Image styling */
+/* Top sliding box */
 .slide-container-image {
     width: 90%;
     height: 90%;
@@ -389,7 +392,8 @@ footer a:hover {
     transition: top 0.5s ease-in-out; /* Smooth transition */
 }
 
-/* Textbox styling */
+
+/* Bottom sliding box */
 .slide-container .slide-container-info {
     position: absolute;
     bottom: -100%; /* Initially hidden out of view */
@@ -398,10 +402,9 @@ footer a:hover {
    
     
     text-align: center;
-    transition: bottom 0.5s ease-in-out; /* Smooth transition */
+    transition: bottom 0.5s ease-in-out; 
 }
 
-/* Hover effect */
 .slide-container:hover .slide-container-image {
     top: -100%; /* Slide the image out of the container */
 }
@@ -412,89 +415,53 @@ footer a:hover {
 
 .slide-container-info {
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: repeat(5, 1fr);
-
-    background-color: rgba(83, 83, 83, 0.2); /* Dark background */
-
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-template-rows: repeat(4, 1fr);
+    background-color: rgba(83, 83, 83, 0.2);
     margin: 2.5% 2.5% 2.5% 2.5%;
     padding: 2.5% 2.5% 2.5% 2.5%;
-
     width: 90%;
     height: 90%;
     border-radius: 2vh;
 }
 
-.slide-container-info-image{
-    width: 75%;
+/* Icons and names of software used */
+.slide-container-info-image-left, .slide-container-info-image-right{
+    width: 85%;
     height: auto;
-    grid-column: 1 / 2; /* Image occupies the first column */
     justify-self: center; /* Center the image horizontally */
     align-self: center; /* Center the image vertically */
-    margin: 5%;
 }
 
-.slide-container-info-text {
-    grid-column: 2 / 3; /* Text occupies the second column */
+.slide-container-info-text-left, .slide-container-info-text-right{
     text-align: left; /* Align text to the left */
     align-self: center; /* Center text vertically */
-    padding-right: 1vh;
+    padding: 0px 0.5vh;
     font-size: 1.75vh;
     font-weight: 600;
     color: var(--text);
 }
 
-
-
-
-
-
-
-/* Title styling, taking up the top-right row */
-.index-main-showcase-title {
-    grid-column: 2 / 3; /* Take the second column */
-    grid-row: 1 / 2; /* Only the first row */
-    font-size: 3vh;
-    font-weight: 600;
-    display: flex;
-    align-items: center; /* Center the title vertically */
-    justify-content: center; /* Center the title horizontally */
-    width: 100%;
-    height: 100%;
-
-    text-decoration: underline;
+.slide-container-info-image-left{
+    grid-column: 1; /* Image occupies the first column */
 }
 
-/* Textbox for project info, taking up the bottom-right row */
-.index-main-showcase-textbox {
-    color: var(--text);
-    
-    grid-column: 2 / 3; /* Take the second column */
-    grid-row: 2 / 3; /* Only the second row */
-    align-items: top; /* Center the title vertically */
-    justify-content: left; /* Center the title horizontally */
-    font-size: 1.75vh;
-    border-radius: 2vh;
-    margin: 1vh;
-    padding: 1vh;
-
-    background-color: rgba(150, 150, 150, 0.2);
-
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.1);
-    
+.slide-container-info-text-left {
+    grid-column: 2;
 }
 
-.index-main-showcase:hover {
-    background-color: rgba(150,150,150, 0.3);
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.5);
-    cursor: pointer;
+.slide-container-info-image-right{
+    grid-column: 3; /* Image occupies the first column */
 }
 
-.index-main-showcase:active {
-    background-color: rgba(150,150,150, 0.3);
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.15);
-    transform: translateY(1vh);
+.slide-container-info-text-right {
+    grid-column: 4
 }
+
+
+
+
+
 
 
 
