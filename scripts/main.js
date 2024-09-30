@@ -1,4 +1,4 @@
-// Set colour mode based on local storage (defaults to dark mode)
+// Set colour mode based on local storage (defaults to light mode)
 document.addEventListener("DOMContentLoaded", function() {
 
     if (localStorage.getItem("colourMode") === "dark") {
@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         setColourMode(true);
     }
 });
+
 
 // Set dark/light mode
 function toggleColourMode() {
@@ -27,12 +28,16 @@ function setColourMode(lightMode) {
     if (!lightMode) {
 
         // ENABLE DARK MODE
-        root.style.setProperty("--background", "#8f958f");
+        root.style.setProperty("--background", "#babeba");
         //  root.style.setProperty("--header", "#293535");
-         root.style.setProperty("--text", "#424242");
+        root.style.setProperty("--text", "#424242");
         // root.style.setProperty("--alternate-text", "white");
         // root.style.setProperty("--header-button", "#e7d8c9");
         // root.style.setProperty("--header-light", "#879183");
+        root.style.setProperty("--showcase-box", "#d3cfca"); // #ddd8d3
+        root.style.setProperty("--showcase-box-element", "rgba(200,200,200, 0.3)");
+        root.style.setProperty("--showcase-box-element-hover", "rgba(150,150,150, 0.3)");
+        
 
         // Update header icon
         if (headerIcon) {
@@ -57,6 +62,10 @@ function setColourMode(lightMode) {
         // root.style.setProperty("--alternate-text", "white");
         // root.style.setProperty("--header-button", "#e7d8c9");
         // root.style.setProperty("--header-light", "#879183");
+        root.style.setProperty("--showcase-box", "#f5efe9");
+        root.style.setProperty("--showcase-box-element", "rgba(200,200,200, 0.2)");
+        root.style.setProperty("--showcase-box-element-hover", "rgba(150,150,150, 0.3)");
+        
         
     
 
@@ -74,14 +83,7 @@ function setColourMode(lightMode) {
     }
 }
 
-// On page load, set the colour mode based on local storage
-document.addEventListener("DOMContentLoaded", function() {
-    if (localStorage.getItem("colourMode") === "dark") {
-        setColourMode(false);
-    } else {
-        setColourMode(true);
-    }
-});
+
 
 
 

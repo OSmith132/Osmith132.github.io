@@ -24,6 +24,9 @@ div {
     --alternate-text: white;
     --header-button: #e7d8c9;
     --header-light: #879183;
+    --showcase-box: #f5efe9;
+    --showcase-box-element: rgba(200,200,200, 0.3);
+    --showcase-box-element-hover: rgba(150,150,150, 0.3);
 }
 
 ::selection {
@@ -239,8 +242,8 @@ footer a:hover {
     height: 45vh;
     width: 45vw;
     position: relative;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    justify-content: center;
+    align-items: center;
 }
 
 .index-main-title img {
@@ -294,11 +297,24 @@ footer a:hover {
 /* -------------- */
 
 /* Main container for projects to go in (only here to fix bug with keyframes) */
-.project-container {
-    animation-delay: 1s;
+
+
+.project-container-1, .project-container-2 {
     animation-duration: 1.2s;
     animation-fill-mode: both;
+    overflow: visible;
 }
+
+.project-container-1 {
+    margin-top: 5vh;
+    animation-delay: 1s;
+}
+
+.project-container-2 {
+    animation-delay: 1.4s;
+}
+
+
 
 /* Main container for the project showcase */
 .index-main-showcase {
@@ -307,13 +323,24 @@ footer a:hover {
     grid-template-rows: 1fr 1fr;
     height: 35vh;
     width: 75vw;
-    margin: 10vh auto;
+    margin: 2vh auto;
     position: relative;
-    background-color: var(--alternate-text);
+    background-color: var(--showcase-box);
     box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.25);
     border-radius: 2vh;
     grid-template-rows: 0.25fr 1.75fr;
     transition: background-color 0.3s, box-shadow 0.1s, transform 0.1s ease-in-out;
+}
+
+.index-main-showcase:hover {
+    background-color: var(--showcase-box-element-hover);   /*CHANGE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.5);
+    cursor: pointer;
+}
+
+.index-main-showcase:active {
+    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.25);
+    transform: translateY(1vh);
 }
 
 
@@ -342,20 +369,11 @@ footer a:hover {
     border-radius: 2vh;
     margin: 1vh;
     padding: 1vh;
-    background-color: rgba(150, 150, 150, 0.2);
+    background-color: var(--showcase-box-element);
     box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.1);
 }
 
-.index-main-showcase:hover {
-    background-color: rgba(150,150,150, 0.3);
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.5);
-    cursor: pointer;
-}
 
-.index-main-showcase:active {
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.25);
-    transform: translateY(1vh);
-}
 
 
 /* --------------- */
@@ -384,7 +402,7 @@ footer a:hover {
     border-radius: 2vh;
     margin: 1vh;
     padding: 1vh;
-    background-color: rgba(83, 83, 83, 0.2);
+    background-color: var(--showcase-box-element);
     position: absolute;
     top: 0;
     left: 0;
@@ -399,6 +417,7 @@ footer a:hover {
     bottom: -100%; /* Initially hidden out of view */
     left: 0;
     right: 0;
+    background-color: var(--showcase-box-element);
    
     
     text-align: center;
@@ -443,7 +462,7 @@ footer a:hover {
 }
 
 .slide-container-info-image-left{
-    grid-column: 1; /* Image occupies the first column */
+    grid-column: 1;
 }
 
 .slide-container-info-text-left {
@@ -451,7 +470,7 @@ footer a:hover {
 }
 
 .slide-container-info-image-right{
-    grid-column: 3; /* Image occupies the first column */
+    grid-column: 3;
 }
 
 .slide-container-info-text-right {
@@ -461,7 +480,26 @@ footer a:hover {
 
 
 
+/* ------------- */
+/* Project Pages */
+/* ------------- */
 
+
+.pdfViewer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 5vh auto auto;
+    flex-direction: column;
+    text-decoration: underline;
+    font-weight: 600;
+    width: 90vw;
+    height: 105vh;
+    background-color: var(--background);
+
+    transition: background-color 0.3s;
+}
 
 
 

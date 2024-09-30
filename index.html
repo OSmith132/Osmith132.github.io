@@ -10,7 +10,7 @@
         <meta name="author" content="Oliver Smith">
 
         <!-- Link to assets used -->
-        <link rel="icon" type="image/x-icon" href="assets/leaf-icon.png">
+        <link rel="icon" type="image/x-icon" href="assets/icons/leaf-icon.png">
         <script src="https://kit.fontawesome.com/7e1870387e.js" crossorigin="anonymous"></script>
 
         <!-- Link to fonts used -->
@@ -61,7 +61,7 @@
 
 
         <!-- Main  -->
-        <!-- Ideas: Feedtrac, GTIS, Certifications, Minesweeper game popup, api for certs/leetcode/repos,  MOBILE SUPPORT, uni work (UX / minesweeper / snake / ) -->
+        <!-- Ideas: Feedtrac, GTIS, Certifications, Minesweeper game popup, api for certs/leetcode/repos,  MOBILE SUPPORT, uni work (UX / minesweeper / snake / ), WORK EXPERIENCE!!-->
     
         
         <main class="index-main-title">
@@ -71,7 +71,7 @@
 
             <!-- Retrieve random image of myself -->
             <script>
-                const imagePath = "assets/index-image-" + Math.floor(Math.random() * 5) + ".png";
+                const imagePath = "assets/me/index-image-" + Math.floor(Math.random() * 5) + ".png";
                 //const imagePath = "assets/index-image-5.png";
                 document.getElementById('index-image').src = imagePath;
             </script>
@@ -88,38 +88,43 @@
         
         </main>
 
+
+
+
         <!-- Project showcase -->
-        <div class="project-container fadeInBottom">
+
+        <!-- FeedTrac -->
+        <div class="project-container-1 fadeInBottom">
             <div class="index-main-showcase" onclick="window.location.href = 'FeedTrac.html';">
 
                 <div class="slide-container">
                     <!-- Image of project -->
-                    <img src="assets/feedtrac-icon.png" class="slide-container-image" alt="Image of project">
+                    <img src="assets/icons/feedtrac-icon.png" class="slide-container-image" alt="Image of project">
 
                     <div class="slide-container-info">
 
                         <!-- First row -->
 
-                        <img src="assets/HTML5-icon.png" class="slide-container-info-image-left" alt="HTML5 Logo">
+                        <img src="assets/icons/HTML5-icon.png" class="slide-container-info-image-left" alt="HTML5 Logo">
                         <p class="slide-container-info-text-left">HTML5</p>
 
-                        <img src="assets/CSS-icon.png" class="slide-container-info-image-right" alt="CSS Logo">
+                        <img src="assets/icons/CSS-icon.png" class="slide-container-info-image-right" alt="CSS Logo">
                         <p class="slide-container-info-text-right">CSS</p>
 
                         <!-- Second row -->
 
-                        <img src="assets/JavaScript-icon.png" class="slide-container-info-image-left" alt="JavaScript Logo">
+                        <img src="assets/icons/JavaScript-icon.png" class="slide-container-info-image-left" alt="JavaScript Logo">
                         <p class="slide-container-info-text-left">JS</p>
                         
-                        <img src="assets/php-icon.png" class="slide-container-info-image-right" alt="PHP Logo">
+                        <img src="assets/icons/php-icon.png" class="slide-container-info-image-right" alt="PHP Logo">
                         <p class="slide-container-info-text-right">PHP</p>
 
                         <!-- Third row -->
 
-                        <img src="assets/git-icon.png" class="slide-container-info-image-left" alt="Git Logo">
+                        <img src="assets/icons/git-icon.png" class="slide-container-info-image-left" alt="Git Logo">
                         <p class="slide-container-info-text-left">Git</p>
 
-                        <img src="assets/MySQL-icon.png" class="slide-container-info-image-right" alt="MySQL Logo">
+                        <img src="assets/icons/MySQL-icon.png" class="slide-container-info-image-right" alt="MySQL Logo">
                         <p class="slide-container-info-text-right">MySQL</p>
                         
                         <!-- Fourth row -->
@@ -133,9 +138,55 @@
                 <div class="index-main-showcase-textbox">
                     <p>FeedTrac is a web-based feedback tracking application developed for academic institutions. It allowed students to submit detailed feedback reports, including urgency, tags, and descriptions, which could then be accessed by relevant staff members for review in an orderly and efficient manner.</p>
                     <br>
-                    <p>The project was developed as a part of a team using PHP, JavaScript, HTML, and CSS for the frontend, while the backend was built in PHP with MariaDB managing the database. Development took place locally on an Apache server using the XAMPP software package.</p>
+                    <p>The project was developed as a part of a team using <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b> for the frontend, while the backend was built in <b>PHP</b> with MariaDB managing the database. Development took place locally on an Apache server using the <b>XAMPP</b> software package.</p>
                     <br>
-                    <p>Key skills required for this project included <b>full-stack web development</b>, relational database creation/management, version control with GitHub, and team collaboration using AGILE methodologies to manage workflow and meet deadlines. </p>
+                    <p>Key skills required for this project included <b>full-stack web development</b>, <b>relational database creation/management</b>, version control with <b>GitHub</b>, and team collaboration using <b>AGILE methodologies</b> to manage workflow and meet deadlines. </p>
+                    <br>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+
+        <!-- Graph Theory Interactive Sandbox -->
+        <div class="project-container-2 fadeInBottom">
+            <div class="index-main-showcase" onclick="window.location.href = 'GTIS.html';">
+
+                <div class="slide-container">
+                    <!-- Image of project -->
+                    <img src="assets/icons/GTIS-icon.png" class="slide-container-image" alt="Image of project">
+
+                    <div class="slide-container-info">
+
+                        <!-- First row -->
+
+                        <img src="assets/icons/java-icon.png" class="slide-container-info-image-left" alt="Java Logo">
+                        <p class="slide-container-info-text-left">Java</p>
+
+                        <img src="assets/icons/libgdx-icon.png" class="slide-container-info-image-right" alt="LibGDX Logo">
+                        <p class="slide-container-info-text-right">LibGDX</p>
+
+                        <!-- Second row -->
+
+                        <img src="assets/icons/gradle-icon.png" class="slide-container-info-image-left" alt="Gradle Logo">
+                        <p class="slide-container-info-text-left">Gradle</p>
+
+
+                        <!-- Third row -->
+
+                        
+                        <!-- Fourth row -->
+                    
+                    </div>
+                    
+                </div>
+
+                <div class="index-main-showcase-title">Graph Theory Interactive Sandbox</div>
+
+                <div class="index-main-showcase-textbox">
+                    <p>The Graph Theory Interactive Sandbox, or GTIS for short, is a software solution written in <b>Java</b> using <b>LibGDX's Scene 2D</b> for handling the graphical interface and <b>Gradle</b> for automating builds.</p>
                     <br>
                 </div>
                 
