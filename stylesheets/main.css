@@ -491,6 +491,19 @@ footer a:hover {
 /* Project Pages */
 /* ------------- */
 
+.project-title {
+    font-size: 3vh;
+    font-weight: 600;
+    text-align: center;
+    margin: 1vh auto 1vh;
+}
+
+
+
+
+/* ---------- */
+/* PDF Viewer */
+/* ---------- */
 
 .pdfViewerContainer {
     display: flex;
@@ -561,3 +574,7 @@ footer a:hover {
     transform: rotate(180deg);
 }
 
+
+/* ---------- */
+/* GPT */
+/* ---------- */
