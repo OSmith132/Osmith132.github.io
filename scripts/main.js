@@ -121,3 +121,24 @@ function togglePasswordVisibility(passwordID) {
         element.type = "password";
     }
 }
+
+
+document.querySelector('.toggleButton').addEventListener('click', function() {
+    const pdfViewer = document.querySelector('.pdfViewer');
+    const arrow = document.querySelector('.arrow');
+    const toggleButton = document.querySelector('.toggleButton');
+
+    if (pdfViewer.classList.contains('active')) {
+        pdfViewer.classList.remove('active');
+        arrow.classList.remove('rotate'); // Reset arrow direction
+        // Set border radius for hidden state
+        toggleButton.style.borderBottomLeftRadius = '1vh';
+        toggleButton.style.borderBottomRightRadius = '1vh';
+    } else {
+        pdfViewer.classList.add('active');
+        arrow.classList.add('rotate'); // Rotate arrow upwards
+        // Set border radius for visible state
+        toggleButton.style.borderBottomLeftRadius = '0';
+        toggleButton.style.borderBottomRightRadius = '0';
+    }
+});

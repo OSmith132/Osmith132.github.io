@@ -20,7 +20,8 @@ div {
     /* Default colours */
     --background: #f0e5d8;
     --header: #293535;    
-    --text: #444444;
+    --text: rgb(56, 56, 61);
+    --text-hover: rgba(56, 56, 61, 0.8);
     --alternate-text: white;
     --header-button: #e7d8c9;
     --header-light: #879183;
@@ -42,8 +43,14 @@ body {
     font-family: sans-serif;
     margin: 0;
     min-height: 100vh;
-    height: 100%;
     transition: background-color 0.3s, border-color 0.3s;
+    
+}
+
+main {
+    display: flex; /* Make the main a flex container */
+    flex: 1; /* Allow main to grow and fill available space */
+    flex-direction: column; /* Ensure content flows vertically */
 }
 
 
@@ -244,6 +251,7 @@ footer a:hover {
     position: relative;
     justify-content: center;
     align-items: center;
+    overflow: visible;
 }
 
 .index-main-title img {
@@ -391,7 +399,6 @@ footer a:hover {
     overflow: hidden; /* Hide elements sliding out of view */
     align-items: center;
     justify-content: center;
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.0);
 }
 
 
@@ -485,24 +492,72 @@ footer a:hover {
 /* ------------- */
 
 
+.pdfViewerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    margin: 5vh auto auto;
+
+    flex: 1; /* This will allow the main content to grow and fill the available space */
+}
+
 .pdfViewer {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
-    margin: 5vh auto auto;
     flex-direction: column;
     text-decoration: underline;
     font-weight: 600;
-    width: 90vw;
-    height: 105vh;
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 1vh;
+    border-bottom-right-radius: 1vh;
     background-color: var(--background);
-
-    transition: background-color 0.3s;
+    overflow: hidden;
+    max-height: 0; /* Collapsed initially */
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
+.pdfViewer.active {
+    max-height: 100vh;
+    opacity: 1;
+}
 
+.toggleButton {
+    background-color: var(--text);
+    color: var(--alternate-text);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4vh;
+    border-top-left-radius: 1vh;
+    border-top-right-radius: 1vh;
 
+    border-bottom-left-radius: 1vh;
+    border-bottom-right-radius: 1vh;
 
+    transition: 
+    background-color 0.3s, 
+    border-radius 0.3s ease-in-out 0.1s;
+}
 
+.toggleButton:hover {
+    background-color: var(--text-hover);
+}
+
+.arrow {
+    font-size: 3vh;
+    position: absolute;
+    margin-left: 78%;
+    transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+    transform: rotate(180deg);
+}
 
