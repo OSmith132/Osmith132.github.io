@@ -2,9 +2,6 @@
 /* EVERYWHERE */
 /* ---------- */
 
- /* a {border: solid rgb(255, 0, 221) 2px; }
-div {border: solid rgb(255, 0, 221) 2px; } 
-main {border: solid rgb(255, 0, 221) 2px; } */
 
 div {
     overflow: hidden;
@@ -42,7 +39,7 @@ body {
     flex-direction: column;
     font-family: sans-serif;
     margin: 0;
-    min-height: 100vh;
+    min-height: 100vmin;
     transition: background-color 0.3s, border-color 0.3s;
     
 }
@@ -64,12 +61,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    padding: 2vh;
-    gap: 2vh;
+    padding: 1vmin;
+    gap: 1vmin;
     transition: background-color 0.3s, border-color 0.3s;
     box-sizing: border-box;
-    height: 6vh;
-    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.3);
+    height: 6vmin;
+    box-shadow: 0 1vmin 2vmin rgba(0, 0, 0, 0.3);
 }
 
 /* Link to social Buttons */
@@ -77,16 +74,16 @@ header {
     align-items: center;
     color: inherit;
     display: flex;
-    padding: 1vh;
-    gap: 1vh;
-    border-radius: 1vh;
+    padding: 1vmin;
+    gap: 1vmin;
+    border-radius: 1vmin;
     transition: background-color 0.3s, border-color 0.3s;
     text-decoration: none;
 
 }
 
 .header-logo img {
-    height: 3.5vh;
+    height: 3.5vmin;
     width: auto;
 }
 
@@ -100,38 +97,42 @@ header {
     color: var(--alternate-text);
     font-style: normal;
     text-decoration: none;
-    font-size: 2vh;
+    font-size: 2vmin;
 }
 
 .header-box{
     display: flex;
     align-items: center;
-    gap: 1.75vh;
+    gap: 2vmin;
     justify-content: flex-start;
 }
 
 /* Header Buttons (Light and dark) */
 .header-button {
     background-color: var(--header); 
-    border: 0.3vh solid var(--header-light); 
+    border: 0.3vmin solid var(--header-light); 
     border-radius: 20%;
-    height: 3.5vh;
-    width: 3.5vh;
+    height: 3.5vmin;
+    width: 3.5vmin;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s, border-color 0.3s;
-    padding: 0.2vh;
+    padding: 0.2vmin;
+    flex-shrink: 0;
+    
+
 }
 
 .header-button:hover {
     background-color: var(--header-light);
     cursor: pointer;
+    flex-shrink: 0
 }
 
 .header-button i {
     color: var(--header-button);
-    font-size: 2vh;
+    font-size: 2vmin;
 }
 
 
@@ -141,17 +142,17 @@ header {
 
 footer {
     background-color: var(--header);
-    border-top: 0.1vh solid var(--text);
+    border-top: 0.1vmin solid var(--text);
     color: var(--header-light);
     display: flex;
-    gap: 3vh;
+    gap: 3vmin;
     justify-content: center;
-    padding: 1.5vh;
+    padding: 1.5vmin;
     transition: background-color 0.3s, border-color 0.3s;
     box-sizing: border-box;
-    height:6vh;
+    height:6vmin;
     align-items: center;
-    margin: 5vh auto auto auto;
+    margin: 5vmin auto auto auto;
 
     /* For a sticky footer */
     /* position: fixed;
@@ -164,7 +165,7 @@ footer i {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2vh;
+    font-size: 2vmin;
 }
 
 footer a {
@@ -173,7 +174,7 @@ footer a {
     display: flex;
     justify-content: center;
     align-items: center; 
-    font-size: 2vh;
+    font-size: 2vmin;
 }
 
 footer a:hover {
@@ -183,9 +184,9 @@ footer a:hover {
 /* Footer icon */
 .footer-leaf {
     position: absolute;
-    margin-left: 97%; /* Push the image to the far right */
+    margin-left: 96%; /* Push the image to the far right */
 
-    height: 5vh;
+    height: 5vmin;
     width: auto;
 
   -webkit-animation-duration: 1s;
@@ -202,6 +203,12 @@ footer a:hover {
     -moz-animation-name: bounce;
 }
 
+@media only screen and (max-width: 720px) {
+    .footer-leaf {
+        display: none;
+    }
+}
+
 /* ---------- */
 /* ANIMATIONS */
 /* ---------- */
@@ -213,14 +220,14 @@ footer a:hover {
 		transform:         translateY(0)
 	}
 	40% {
-		-webkit-transform: translateY(-1vh);
-		-ms-transform:     translateY(-1vh);
-		transform:         translateY(-1vh)
+		-webkit-transform: translateY(-1vmin);
+		-ms-transform:     translateY(-1vmin);
+		transform:         translateY(-1vmin)
 	}
 	60% {
-		-webkit-transform: translateY(-0.5vh);
-		-ms-transform:     translateY(-0.5vh);
-		transform:         translateY(-0.5vh)
+		-webkit-transform: translateY(-0.5vmin);
+		-ms-transform:     translateY(-0.5vmin);
+		transform:         translateY(-0.5vmin)
 	}
 }
 
@@ -228,7 +235,7 @@ footer a:hover {
 @keyframes fadeInBottom {
     from {
         opacity: 0;
-        transform: translateY(2vh);
+        transform: translateY(2vmin);
     }
     to { opacity: 1;
          transform: translateY(0px);
@@ -239,64 +246,80 @@ footer a:hover {
 /* ----- */
 /* INDEX */
 /* ----- */
-
 .index-main-title {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin: 5vh auto auto;
+    margin: 5vmin auto auto;
     transition: background-color 0.3s, border-color 0.3s;
-    height: 45vh;
-    width: 45vw;
+    height: 45vmin;
+    width: 45vmax;
     position: relative;
     justify-content: center;
     align-items: center;
     overflow: visible;
-}
 
-.index-main-title img {
-    border-radius: 2vh;
-    height: 100%;
-    width: 100%;
-    /* left: -5%; */
-    object-fit: cover; /* Ensures the image covers the container */
-    z-index: 1;
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.25);
-
-    position: absolute;
-
-
-    animation-duration: 1.5s;
-    animation-fill-mode: both;
+    min-width: 75vmin;
+    min-height: 20vmax; 
 
     
 }
 
+
+  
+
+.index-main-title img {
+    border-radius: 2vmin;
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    z-index: 1;
+    box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.25);
+    position: absolute;
+
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+}
+
 .index-main-title-textbox {
     background-color: rgba(83, 83, 83, 0.8);
-    backdrop-filter: blur(0.2vh); /* Blur effect */
+    backdrop-filter: blur(0.2vmin); /* Blur effect */
     z-index: 2; /* Ensures the text appears above the image */
     color: var(--alternate-text);
-    border-radius: 2vh;
-    padding: 1.5vh;
+    border-radius: 2vmin;
+    padding: 1.5vmin;
     text-align: left;
-    font-size: 2vh;
+    font-size: 1vmax;
+
     width: 80%;
-    max-height: 80%;
+    height: 80%;
     position: absolute;
     left: 30%;
     color: var(--alternate-text);
     transition: background-color 0.3s, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     animation-duration: 1.2s;
     animation-fill-mode: both;
     animation-delay: 0.3s;
 }
 
+@media screen and (max-width: 1536px) {
+    .index-main-title-textbox {
+        max-width: 70%;
+        font-size: 1.75vmin;
+    }
+  }
+
+
 .index-main-title-textbox:hover {
     background-color: rgba(83, 83, 83, 0.9);
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.5);
+    box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.5);
 }
+
+
+
 
 
 
@@ -306,7 +329,6 @@ footer a:hover {
 
 /* Main container for projects to go in (only here to fix bug with keyframes) */
 
-
 .project-container-1, .project-container-2 {
     animation-duration: 1.2s;
     animation-fill-mode: both;
@@ -314,7 +336,8 @@ footer a:hover {
 }
 
 .project-container-1 {
-    margin-top: 5vh;
+    margin-top: 5vmin; 
+
     animation-delay: 1s;
 }
 
@@ -322,47 +345,52 @@ footer a:hover {
     animation-delay: 1.4s;
 }
 
-
-
 /* Main container for the project showcase */
 .index-main-showcase {
     display: grid;
-    grid-template-columns: 35vh auto;
+    grid-template-columns: 35vmin auto; 
+
     grid-template-rows: 1fr 1fr;
-    height: 35vh;
-    width: 75vw;
-    margin: 2vh auto;
+    height: 35vmin; 
+
+    width: 75vmax; 
+    margin: 2vmin auto; 
+
     position: relative;
     background-color: var(--showcase-box);
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.25);
-    border-radius: 2vh;
+    box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.25); 
+
+    border-radius: 2vmin; 
+
     grid-template-rows: 0.25fr 1.75fr;
     transition: background-color 0.3s, box-shadow 0.1s, transform 0.1s ease-in-out;
+
+    max-width: 90%;
 }
 
 .index-main-showcase:hover {
-    background-color: var(--showcase-box-element-hover);   /*CHANGE THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.5);
+    background-color: var(--showcase-box-element-hover);
+    box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.5); 
     cursor: pointer;
 }
 
 .index-main-showcase:active {
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.25);
-    transform: translateY(1vh);
-}
+    box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.25); 
+    transform: translateY(1vmin); 
 
+}
 
 .index-main-showcase-title {
     grid-column: 2; /* Take the second column */
     grid-row: 1; /* Only the first row */
-    font-size: 3vh;
+    font-size: 1.5vmax; 
+
     font-weight: 600;
     display: flex;
     align-items: center; /* Center the title vertically */
     justify-content: center; /* Center the title horizontally */
     width: 100%;
     height: 100%;
-
     text-decoration: underline;
 }
 
@@ -373,16 +401,18 @@ footer a:hover {
     grid-row: 2; /* Only the second row */
     align-items: top; /* Center the title vertically */
     justify-content: left; /* Center the title horizontally */
-    font-size: 1.75vh;
-    border-radius: 2vh;
-    margin: 1vh;
-    padding: 1vh;
+    font-size: 1.75vmin; 
+
+    border-radius: 2vmin; 
+
+    margin: 1vmin; 
+
+    padding: 1vmin; 
+
     background-color: var(--showcase-box-element);
-    box-shadow: 0 1vh 2vh rgba(10, 10, 10, 0.1);
+    box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.1); 
+
 }
-
-
-
 
 /* --------------- */
 /* SLIDE CONTAINER */
@@ -401,14 +431,16 @@ footer a:hover {
     justify-content: center;
 }
 
-
 /* Top sliding box */
 .slide-container-image {
     width: 90%;
     height: 90%;
-    border-radius: 2vh;
-    margin: 1vh;
-    padding: 1vh;
+    border-radius: 2vmin; 
+
+    margin: 1vmin; 
+
+    padding: 1vmin; 
+
     background-color: var(--showcase-box-element);
     position: absolute;
     top: 0;
@@ -417,7 +449,6 @@ footer a:hover {
     transition: top 0.5s ease-in-out; /* Smooth transition */
 }
 
-
 /* Bottom sliding box */
 .slide-container .slide-container-info {
     position: absolute;
@@ -425,8 +456,6 @@ footer a:hover {
     left: 0;
     right: 0;
     background-color: var(--showcase-box-element);
-   
-    
     text-align: center;
     transition: bottom 0.5s ease-in-out; 
 }
@@ -448,27 +477,30 @@ footer a:hover {
     padding: 2.5% 2.5% 2.5% 2.5%;
     width: 90%;
     height: 90%;
-    border-radius: 2vh;
+    border-radius: 2vmin; 
+
 }
 
 /* Icons and names of software used */
-.slide-container-info-image-left, .slide-container-info-image-right{
+.slide-container-info-image-left, .slide-container-info-image-right {
     width: 85%;
     height: auto;
     justify-self: center; /* Center the image horizontally */
     align-self: center; /* Center the image vertically */
 }
 
-.slide-container-info-text-left, .slide-container-info-text-right{
+.slide-container-info-text-left, .slide-container-info-text-right {
     text-align: left; /* Align text to the left */
     align-self: center; /* Center text vertically */
-    padding: 0px 0.5vh;
-    font-size: 1.75vh;
+    padding: 0px 0.5vmin; 
+
+    font-size: 1.75vmin; 
+
     font-weight: 600;
     color: var(--text);
 }
 
-.slide-container-info-image-left{
+.slide-container-info-image-left {
     grid-column: 1;
 }
 
@@ -476,30 +508,26 @@ footer a:hover {
     grid-column: 2;
 }
 
-.slide-container-info-image-right{
+.slide-container-info-image-right {
     grid-column: 3;
 }
 
 .slide-container-info-text-right {
-    grid-column: 4
+    grid-column: 4;
 }
-
-
-
 
 /* ------------- */
 /* Project Pages */
 /* ------------- */
 
 .project-title {
-    font-size: 3vh;
+    font-size: 3vmin; 
+
     font-weight: 600;
     text-align: center;
-    margin: 1vh auto 1vh;
+    margin: 1vmin auto 1vmin; 
+
 }
-
-
-
 
 /* ---------- */
 /* PDF Viewer */
@@ -509,8 +537,8 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80vw;
-    margin: 5vh auto auto;
+    width: 80vmax; 
+    margin: 5vmin auto auto; 
 
     flex: 1; /* This will allow the main content to grow and fill the available space */
 }
@@ -524,8 +552,10 @@ footer a:hover {
     font-weight: 600;
     width: 100%;
     height: auto;
-    border-bottom-left-radius: 1vh;
-    border-bottom-right-radius: 1vh;
+    border-bottom-left-radius: 1vmin; 
+
+    border-bottom-right-radius: 1vmin; 
+
     background-color: var(--background);
     overflow: hidden;
     max-height: 0; /* Collapsed initially */
@@ -534,7 +564,8 @@ footer a:hover {
 }
 
 .pdfViewer.active {
-    max-height: 100vh;
+    max-height: 100vmin; 
+
     opacity: 1;
 }
 
@@ -547,12 +578,15 @@ footer a:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 4vh;
-    border-top-left-radius: 1vh;
-    border-top-right-radius: 1vh;
+    height: 4vmin; 
 
-    border-bottom-left-radius: 1vh;
-    border-bottom-right-radius: 1vh;
+    border-top-left-radius: 1vmin; 
+
+    border-top-right-radius: 1vmin; 
+
+    border-bottom-left-radius: 1vmin; 
+
+    border-bottom-right-radius: 1vmin; 
 
     transition: 
     background-color 0.3s, 
@@ -564,7 +598,8 @@ footer a:hover {
 }
 
 .arrow {
-    font-size: 3vh;
+    font-size: 3vmin; 
+
     position: absolute;
     margin-left: 78%;
     transition: transform 0.3s ease;
@@ -573,8 +608,3 @@ footer a:hover {
 .arrow.rotate {
     transform: rotate(180deg);
 }
-
-
-/* ---------- */
-/* GPT */
-/* ---------- */
