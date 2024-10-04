@@ -3,6 +3,11 @@
 /* ---------- */
 
 
+ /* a {border: solid rgb(255, 0, 221) 2px; }
+div {border: solid rgb(255, 0, 221) 2px; } 
+main {border: solid rgb(255, 0, 221) 2px; } */
+
+
 div {
     overflow: hidden;
   }
@@ -36,7 +41,7 @@ body {
     background-color: var(--background);
     color: var(--text);
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     font-family: sans-serif;
     margin: 0;
     min-height: 100vmin;
@@ -65,9 +70,13 @@ header {
     gap: 1vmin;
     transition: background-color 0.3s, border-color 0.3s;
     box-sizing: border-box;
+    /* height: 6vmin; */
+    min-height: 6vmin;
     height: 6vmin;
     box-shadow: 0 1vmin 2vmin rgba(0, 0, 0, 0.3);
 }
+
+
 
 /* Link to social Buttons */
 .header-logo {
@@ -75,11 +84,14 @@ header {
     color: inherit;
     display: flex;
     padding: 1vmin;
-    gap: 1vmin;
+    gap: 2%;
     border-radius: 1vmin;
     transition: background-color 0.3s, border-color 0.3s;
     text-decoration: none;
 
+    max-width: 20%;
+
+    
 }
 
 .header-logo img {
@@ -105,6 +117,8 @@ header {
     align-items: center;
     gap: 2vmin;
     justify-content: flex-start;
+    max-width: 90%;
+
 }
 
 /* Header Buttons (Light and dark) */
@@ -133,6 +147,28 @@ header {
 .header-button i {
     color: var(--header-button);
     font-size: 2vmin;
+}
+
+
+@media only screen and (max-width: 720px) {
+    header {
+        min-height: 12vmin;
+    }
+    .header-logo img {
+        height: 5vmin;
+        width: auto;
+    }
+    .header-button {
+        height: 5vmin;
+        width: 5vmin;
+    }
+    .header-button i {
+        font-size: 3vmin;
+    }
+    .header-logo-text {
+        font-size: 3vmin;
+    }
+
 }
 
 
@@ -262,6 +298,9 @@ footer a:hover {
     min-width: 75vmin;
     min-height: 20vmax; 
 
+    max-width: 80vmin;
+    max-height: 40vmax;
+
     
 }
 
@@ -305,7 +344,7 @@ footer a:hover {
     animation-delay: 0.3s;
 }
 
-@media screen and (max-width: 1536px) {
+@media screen and (max-width: 720px) {
     .index-main-title-textbox {
         max-width: 70%;
         font-size: 1.75vmin;
@@ -329,7 +368,7 @@ footer a:hover {
 
 /* Main container for projects to go in (only here to fix bug with keyframes) */
 
-.project-container-1, .project-container-2 {
+.project-container-1, .project-container-2, .project-container-3, .project-container-4, .project-container-5 {
     animation-duration: 1.2s;
     animation-fill-mode: both;
     overflow: visible;
@@ -337,12 +376,23 @@ footer a:hover {
 
 .project-container-1 {
     margin-top: 5vmin; 
-
     animation-delay: 1s;
 }
 
 .project-container-2 {
     animation-delay: 1.4s;
+}
+
+.project-container-3 {
+    animation-delay: 1.6s;
+}
+
+.project-container-4 {
+    animation-delay: 1.8s;
+}
+
+.project-container-5 {
+    animation-delay: 2s;
 }
 
 /* Main container for the project showcase */
@@ -537,8 +587,11 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80vmax; 
+    width: 80vw; 
+    height: auto;
     margin: 5vmin auto auto; 
+
+    
 
     flex: 1; /* This will allow the main content to grow and fill the available space */
 }
@@ -580,6 +633,8 @@ footer a:hover {
     width: 100%;
     height: 4vmin; 
 
+    font-size: 3vmin;
+
     border-top-left-radius: 1vmin; 
 
     border-top-right-radius: 1vmin; 
@@ -601,10 +656,97 @@ footer a:hover {
     font-size: 3vmin; 
 
     position: absolute;
-    margin-left: 78%;
+    margin-left: 76vw;
     transition: transform 0.3s ease;
 }
 
 .arrow.rotate {
     transform: rotate(180deg);
+}
+
+
+/* --------------- */
+/*  Certificaitons */
+/* --------------- */
+
+.certification-container {
+    margin: 5vmin auto 2vmin auto;
+    justify-self: center;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    width: 80vw;
+    height: auto;
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1vmin; 
+    overflow: visible;
+
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+    animation-delay: 0.8s;
+}
+
+.card {
+    width: 20vmin; 
+    height: 20vmin; 
+    border-radius: 2vmin;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    background-color: var(--showcase-box);
+    box-shadow: 0 1vmin 1vmin rgba(10, 10, 10, 0.25);
+}
+
+.card:hover {
+    flex-grow: 8;
+    background-color: var(--showcase-box-element-hover);
+}
+
+.card > .card-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.card-content > .certification-image {
+    width: 100%;
+    height: 100%;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    overflow: hidden;
+}
+
+.certification-image img {
+    width: 95%;
+    height: 95%;
+    object-fit: contain; /* Ensures the image scales properly without distortion */
+}
+
+/* Title with width change effect */
+.card-content > .title {
+    width: 0; /* Hidden width by default */
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    font-size: 2vmin;
+    font-weight: 500;
+}
+
+.card:hover .title {
+    margin-left: 1vmin;
+    margin-right: 1vmin;
+    opacity: 1;
+    width: 100%;
 }
