@@ -311,6 +311,8 @@ footer a:hover {
     border-radius: 2vmin;
     height: 100%;
     width: 100%;
+
+    min-width: 35vw;
     
     object-fit: cover; /* Ensures the image covers the container */
     z-index: 1;
@@ -350,8 +352,12 @@ footer a:hover {
 
 @media screen and (max-width: 720px) {
     .index-main-title-textbox {
-        max-width: 70%;
+        max-width: 75%;
+        
 
+    }
+    .index-main-title {
+        left: -2.5%;
     }
   }
 
@@ -372,7 +378,7 @@ footer a:hover {
 
 /* Main container for projects to go in (only here to fix bug with keyframes) */
 
-.project-container-1, .project-container-2, .project-container-3, .project-container-4, .project-container-5 {
+.project-container-1, .project-container-2, .project-container-3, .project-container-4, .project-container-5, .project-container-6 {
     animation-duration: 1.2s;
     animation-fill-mode: both;
     overflow: visible;
@@ -397,6 +403,10 @@ footer a:hover {
 
 .project-container-5 {
     animation-delay: 2s;
+}
+
+.project-container-6 {
+    animation-delay: 2.2s;
 }
 
 /* Main container for the project showcase */
