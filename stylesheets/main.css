@@ -84,12 +84,10 @@ header {
     color: inherit;
     display: flex;
     padding: 1vmin;
-    gap: 7%;
+    gap: 5%;
     border-radius: 1vmin;
     transition: background-color 0.3s, border-color 0.3s;
     text-decoration: none;
-
-    max-width: 20%;
 
     
 }
@@ -166,7 +164,7 @@ header {
         font-size: 3vmin;
     }
     .header-logo-text {
-        font-size: 3vmin;
+        font-size: 2.6vmin;
     }
 
 }
@@ -410,19 +408,19 @@ footer a:hover {
 }
 
 /* Main container for the project showcase */
-.index-main-showcase {
+.index-main-showcase-unfinished, .index-main-showcase {
     display: grid;
     grid-template-columns: 35vmin auto; 
 
     grid-template-rows: 1fr 1fr;
-    height: 35vmin; 
 
+    min-height: 35vmin;
+    height: auto; 
     width: 75vmax; 
     margin: 2vmin auto; 
 
     position: relative;
-    background-color: var(--showcase-box);
-    box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.25); 
+    
 
     border-radius: 2vmin; 
 
@@ -432,6 +430,18 @@ footer a:hover {
     max-width: 90%;
 }
 
+.index-main-showcase {
+    background-color: var(--showcase-box);
+    box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.25); 
+}
+
+.index-main-showcase-unfinished {
+    background-color: var(--showcase-box-element-hover);
+    box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.15); 
+}
+
+
+
 .index-main-showcase:hover {
     background-color: var(--showcase-box-element-hover);
     box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.5); 
@@ -439,7 +449,7 @@ footer a:hover {
 }
 
 .index-main-showcase:active {
-    box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.25); 
+    box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.25);
     transform: translateY(1vmin); 
 
 }
@@ -478,33 +488,65 @@ footer a:hover {
 
 }
 
+.unfinished-project-warning{
+    position: absolute;
+    left: 96%;
+    top: 3%;
+
+    width: 2.5%;
+    height: auto;
+    
+}
+
+
+
 /* --------------- */
 /* SLIDE CONTAINER */
 /* --------------- */
 
-/* Slide container to contain image and textbox */
-.slide-container {
-    grid-column: 1 / 2; /* Span only the first column */
-    grid-row: 1 / 4; /* Span both rows */
-    /* border-radius: 2vh; */
+.static-container {  /* Static version of below for inactive projects */
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+
     height: 100%;
     width: 100%;
-    position: relative; /* Ensure children can position relative to this */
-    overflow: hidden; /* Hide elements sliding out of view */
+    position: relative; 
+    overflow: hidden;
     align-items: center;
     justify-content: center;
 }
 
+/* Slide container to contain image and textbox */
+.slide-container {
+    grid-column: 1 / 2; 
+    grid-row: 1 / 4; 
+
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
 /* Top sliding box */
+/* Container for the image */
 .slide-container-image {
+    display: flex;
+    align-items: center;  /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    
     width: 90%;
-    height: 90%;
-    border-radius: 2vmin; 
+    height: auto;
+    border-radius: 2vmin;
+    margin: 1vmin;
+    padding: 1vmin;
 
-    margin: 1vmin; 
-
-    padding: 1vmin; 
-
+    justify-self: center;
+    align-self: center;
+    
     background-color: var(--showcase-box-element);
     position: absolute;
     top: 0;
@@ -512,6 +554,15 @@ footer a:hover {
     right: 0;
     transition: top 0.5s ease-in-out; /* Smooth transition */
 }
+
+/* Image itself */
+.slide-container-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Keeps the aspect ratio */
+    border-radius: 2vmin;
+}
+
 
 /* Bottom sliding box */
 .slide-container .slide-container-info {
