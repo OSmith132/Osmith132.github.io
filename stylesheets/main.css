@@ -276,6 +276,17 @@ footer a:hover {
     }
 }
 
+.smallFadeInBottom {animation-name: smallFadeInBottom;}
+@keyframes smallFadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(1vmin);
+    }
+    to { opacity: 1;
+         transform: translateY(0px);
+    }
+}
+
 
 /* ----- */
 /* INDEX */
@@ -298,8 +309,6 @@ footer a:hover {
 
     max-width: 80vmin;
     max-height: 40vmax;
-
-    
 }
 
 
@@ -412,7 +421,7 @@ footer a:hover {
     display: grid;
     grid-template-columns: 35vmin auto; 
 
-    grid-template-rows: 1fr 1fr;
+
 
     min-height: 35vmin;
     height: auto; 
@@ -642,6 +651,126 @@ footer a:hover {
     text-align: center;
     margin: 1vmin auto 1vmin; 
 }
+
+.github-card-container{
+
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    overflow: visible;
+    display: flex;
+
+    position: absolute;
+    right: 1vmin;
+    top: 7vmin;
+
+
+}
+
+.github-card {
+    background-color: var(--showcase-box);
+
+    border-radius: 1.5vmin;
+    padding: 1vmin;
+    position: relative;
+    min-width: 15vw;
+    min-height: 10vh;
+
+    max-height: 14vh;
+    max-width: 35vw;
+
+   
+
+    
+
+    box-shadow: 0 0.2vmin 1vmin rgba(10, 10, 10, 0.15);
+
+    transition: background-color 0.3s, box-shadow 0.1s, transform 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.github-card:hover {
+    background-color: var(--showcase-box-element-hover);
+    box-shadow: 0 0.1vmin 1vmin rgba(10, 10, 10, 0.1);
+    
+}
+
+.github-card:active {
+    transform: translateY(1vmin); 
+    box-shadow: 0 0.1vmin 1vmin rgba(10, 10, 10, 0.05);
+}
+
+@media screen and (max-width: 720px) {
+    .github-card-container {
+        top: 13vmin;
+    }
+    
+}
+
+.card-header {
+    display: flex;
+    align-items: center; 
+    margin: auto auto 1vmin auto;
+}
+
+.github-card img {
+    border-radius: 50%;
+    width: 6vmin;
+    height: auto;
+    margin-right: 1vmin;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column; /* Align text in a column */
+}
+
+.github-card h2 {
+    margin: 0; 
+    font-size: 3vmin;
+}
+
+.github-card p {
+    margin: 0; 
+    font-size: 2vmin; 
+    text-align: left;
+}
+
+/* Link styles */
+.github-card a {
+    color: var(--header-light);
+    text-decoration: none;
+    font-size: 2vmin; 
+}
+
+.github-card a:hover {
+    text-decoration: underline;
+}
+
+.github-card .description {
+    font-size: 1.5vmin;
+    margin-bottom: 1vmin;
+}
+
+.github-card .stats{
+    display: flex;
+    justify-content: space-between;
+    gap: 1vmin;
+    font-size: 1.5vmin;
+}
+
+.languages{
+    justify-content: left;
+    gap: 1vmin;
+    font-size: 1.5vmin;
+}
+
+
+.github-card .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1vmin;
+}
+
 
 
 
