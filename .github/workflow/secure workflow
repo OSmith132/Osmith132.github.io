@@ -11,8 +11,8 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Use Secret in Workflow
-      run: echo "The API key is ${{ secrets.GIT_TOKEN }}"
-      # Here, you can use the secret in your commands or scripts
+      run: GIT_TOKEN = ${{ secrets.GIT_TOKEN }}"
+
