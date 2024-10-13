@@ -641,8 +641,10 @@ footer a:hover {
     font-weight: 600;
     text-align: center;
     margin: 1vmin auto 1vmin; 
-
 }
+
+
+
 
 /* ---------- */
 /* PDF Viewer */
@@ -818,3 +820,4 @@ footer a:hover {
     opacity: 1;
     width: 100%;
 }
+

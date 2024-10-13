@@ -57,9 +57,165 @@
                     <h2>FeedTrac</h2>
                 </div>
 
-            
-                <div class="github-card" data-github="OSmith132/FeedTrac" data-target="blank" data-width="400" data-height="" data-theme="default"></div>
-                <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+                <!-- <div class="github-link">
+                    <div class="github-card" data-github="OSmith132/FeedTrac" data-target="blank" data-width="100%" data-height="50%" data-theme="default"></div>
+                    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+                </div> -->
+
+                
+                
+                <style>
+                  .github-card {
+                    border: 1px solid #e1e4e8;
+                    border-radius: 6px;
+                    padding: 16px;
+                    width: 400px;
+                    background-color: #f6f8fa;
+                    font-family: Arial, sans-serif;
+                  }
+                  .github-card h2 {
+                    margin: 0 0 10px;
+                  }
+                  .github-card a {
+                    color: #0366d6;
+                    text-decoration: none;
+                  }
+                  .github-card a:hover {
+                    text-decoration: underline;
+                  }
+                  .github-card img {
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 10px;
+                  }
+                  .github-card .header {
+                    display: flex;
+                    align-items: center;
+                  }
+                  .github-card .description {
+                    margin: 10px 0;
+                  }
+                  .github-card .stats {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 10px;
+                  }
+                  .github-card .stat-item {
+                    display: flex;
+                    align-items: center;
+                  }
+                  .github-card .stat-item span {
+                    margin-left: 5px;
+                  }
+                </style>
+                
+                <div class="github-card">
+                  <div class="header">
+                    <img id="profile-pic" src="" alt="GitHub Profile Picture">
+                    <h2><a href="https://github.com/OSmith132/FeedTrac" target="_blank">FeedTrac</a></h2>
+                  </div>
+                  <p>GitHub User: <a href="https://github.com/OSmith132" target="_blank">OSmith132</a></p>
+                  <p id="description" class="description">Description: Loading...</p>
+                  <div class="stats">
+                    <div class="stat-item">
+                      <strong>Stars:</strong> <span id="stars">Loading...</span>
+                    </div>
+                    <div class="stat-item">
+                      <strong>Commits:</strong> <span id="commits">Loading...</span>
+                    </div>
+                    <div class="stat-item">
+                      <strong>Forks:</strong> <span id="forks">Loading...</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <script>
+                  // Replace with your actual token
+                  const token = process.env.GIT_TOKEN; // Store it securely
+                
+                  // Fetch repository information
+                  fetch(`https://api.github.com/repos/OSmith132/FeedTrac`, {
+                    headers: {
+                      Authorization: `token ${token}` // Use the token here
+                    }
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    document.getElementById('description').innerText = `Description: ${data.description || 'No description provided.'}`;
+                    document.getElementById('stars').innerText = data.stargazers_count;
+                    document.getElementById('forks').innerText = data.forks_count; // Set forks count
+                  })
+                  .catch(error => {
+                    console.error('Error fetching repository data:', error);
+                  });
+                
+                  // Fetch user profile information
+                  fetch(`https://api.github.com/users/OSmith132`, {
+                    headers: {
+                      Authorization: `token ${token}` // Use the token here
+                    }
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    document.getElementById('profile-pic').src = data.avatar_url;
+                  })
+                  .catch(error => {
+                    console.error('Error fetching user profile data:', error);
+                  });
+                
+                  // Fetch number of commits
+                  fetch(`https://api.github.com/repos/OSmith132/FeedTrac`, {
+                    headers: {
+                      Authorization: `token ${token}` // Use the token here
+                    }
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    return fetch(data.commits_url.replace("{/sha}", "") + `?per_page=1`, {
+                      headers: {
+                        Authorization: `token ${token}` // Use the token here
+                      }
+                    });
+                  })
+                  .then(response => {
+                    const linkHeader = response.headers.get('link');
+                    if (linkHeader) {
+                      const lastPageUrl = linkHeader.match(/<([^>]+)>; rel="last"/);
+                      if (lastPageUrl) {
+                        const lastPageNumber = lastPageUrl[1].split('page=')[1];
+                        document.getElementById('commits').innerText = lastPageNumber;
+                      } else {
+                        document.getElementById('commits').innerText = '1';
+                      }
+                    } else {
+                      document.getElementById('commits').innerText = '0';
+                    }
+                  })
+                  .catch(error => {
+                    console.error('Error fetching commits data:', error);
+                  });
+                </script>
+                
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 
 
 
