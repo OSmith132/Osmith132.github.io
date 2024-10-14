@@ -84,26 +84,68 @@
 
 
 
-       <!-- PDF Viewer -->
-        <div class="pdfViewerContainer">
-            <button class="toggleButton" onclick="togglePDF()">UX Design Documentation
-                <i class="fas fa-chevron-down arrow"></i> <!-- Down arrow initially -->
-            </button>
-            <div class="pdfViewer" style="display: none;">
-                <iframe src="assets/Documentation/User Experience Design Assessment 1.pdf" 
-                        style="height: 100vh; width: 80vw;" frameborder="0">
-                    This browser does not support PDFs. Please download the PDF to view it: 
-                    <a href="assets/Documentation/User Experience Design Assessment 1.pdf">Download PDF</a>
-                </iframe>
-            </div>
-        </div>
+        <!-- PDF Viewer -->
+<div class="pdfViewerContainer">
+    <button class="toggleButton" onclick="togglePDF()">UX Design Documentation
+        <i class="fas fa-chevron-down arrow"></i> <!-- Down arrow initially -->
+    </button>
 
-        <script>
-            function togglePDF() {
-                const pdfViewer = document.querySelector('.pdfViewer');
-                pdfViewer.style.display = pdfViewer.style.display === 'none' ? 'block' : 'none';
-            }
-        </script>
+    <!-- Desktop PDF Embed -->
+    <div class="pdfViewer desktop">
+        <embed src="assets/Documentation/User Experience Design Assessment 1.pdf" 
+               style="height: 100vh; width: 80vw;" />
+    </div>
+
+    <!-- Mobile PDF Viewer -->
+    <div class="pdfViewer mobile" style="display: none;">
+        <canvas id="pdfViewerCanvas" style="width: 100%; height: auto;"></canvas>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+<script>
+    async function loadPDF() {
+        const url = 'assets/Documentation/User Experience Design Assessment 1.pdf';
+        const loadingTask = pdfjsLib.getDocument(url);
+        const pdf = await loadingTask.promise;
+
+        const totalPages = pdf.numPages; // Get total number of pages
+        const canvasContainer = document.getElementById('pdfViewerCanvas');
+        const context = canvasContainer.getContext('2d');
+
+        // Loop through each page and render it
+        for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
+            const page = await pdf.getPage(pageNum);
+            const scale = 1.5; // Adjust scale for zoom
+            const viewport = page.getViewport({ scale });
+
+            // Set canvas dimensions
+            const canvas = document.createElement('canvas');
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            canvasContainer.appendChild(canvas);
+            const renderContext = {
+                canvasContext: canvas.getContext('2d'),
+                viewport: viewport
+            };
+
+            await page.render(renderContext).promise;
+        }
+    }
+
+    function togglePDF() {
+        const mobileViewer = document.querySelector('.mobile');
+        if (mobileViewer.style.display === 'none') {
+            mobileViewer.style.display = 'block'; // Show PDF viewer
+            loadPDF(); // Load PDF only when showing
+        } else {
+            mobileViewer.style.display = 'none'; // Hide PDF viewer
+        }
+    }
+</script>
+
 
 
 
