@@ -52,9 +52,60 @@
 
             <!-- Title -->
             <div class="project-title">
-                <h2>Graph Theory Interactive Sandbox</h2>
-            </div>
+                Graph Theory Interactive Sandbox
+              </div>
+
+              <div class="project-textbox">
+                <p>The Graph Theory Interactive Sandbox (GTIS) is a software application developed in <b>Java</b> using <b>LibGDX's Scene 2D</b> for an graphical interface and <b>Gradle</b> for efficient build automation.</p>
+                <br>
+                <p>This application was created to produce interactive visualizations of complex <b>network algorithms</b> such as <b>Dijkstra's Algorithm</b> and <b>Critical Path Analysis (CPA)</b>. It serves as an educational tool designed enhancing student's understanding of algorithmic processes by enabling them to execute various algorithms on custom-built graphs.</p>
+                <br>
+                <p>Developing this application required a <b>strong foundation in network theory</b> and a deep understanding of commonly used algorithms, such as <b>shortest path algorithms</b>, <b>spanning trees</b>, and <b>critical path methods</b>. Additionally, knowledge of graph structures, optimization techniques, and their practical applications was essential for implementing efficient and accurate visualizations.</p>
+                <br>
+                <p>I developed this project <b>independently</b> to address the distinct lack of resources available for students to understand and practice the graph optimisation algorithms, as outlined in the A-Level Further Maths specification.</p>
+              </div>
         
+
+            <div class="github-card-container smallFadeInBottom">
+                <div class="github-card" onclick="window.open('https://github.com/OSmith132/GTIS', '_blank');">
+                  <div class="card-header">
+                    <img class="github-card-img" id="profile-pic" src="" onerror="this.onerror=null; this.src='assets/icons/warning-icon.png';">
+                    <div class="text-container">
+                      <h2><a href="https://github.com/OSmith132/GTIS" target="_blank">GTIS</a></h2>
+                      <p><a href="https://github.com/OSmith132" target="_blank">OSmith132</a></p>
+                    </div>
+                  </div>
+                  <p id="description" class="description">Description: Loading...</p>
+                  <div class="languages ">
+                    <strong>Languages: </strong> <span id="languages">...</span>
+                  </div>
+                  <div class="stats">
+                    <div class="stat-item">
+                      <strong>Commits: </strong> <span id="commits">...</span>
+                    </div>
+                    <div class="stat-item">
+                      <strong>Stars: </strong> <span id="stars">...</span>
+                    </div>
+                    <div class="stat-item">
+                      <strong>Forks: </strong> <span id="forks">...</span>
+                    </div>
+                  </div>
+
+                  <img class = "github-card-icon" src="assets/icons/github-black-icon.png">
+                </div>
+              </div>
+              
+              <!-- Fetch Data from Github API -->
+              <script src="scripts/fetchRepoData.js"></script>
+              <script>
+                fetchRepoData('OSmith132', 'GTIS');
+              </script>
+
+
+
+
+
+
 
           
             <div class="pdfViewerContainer">

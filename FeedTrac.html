@@ -54,13 +54,19 @@
                 
                 <!-- Title -->
                 <div class="project-title">
-                    <h2>FeedTrac</h2>
+                  FeedTrac
                 </div>
 
-                <!-- <div class="github-link">
-                    <div class="github-card" data-github="OSmith132/FeedTrac" data-target="blank" data-width="100%" data-height="50%" data-theme="default"></div>
-                    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
-                </div> -->
+                <div class="project-textbox">
+                  <p>FeedTrac is a web-based feedback tracking application developed for academic institutions. It allowed students to submit detailed feedback reports, including urgency, tags, and descriptions, which could then be accessed by relevant staff members for review in an orderly and efficient manner.</p>
+                  <br>
+                  <p>The project was developed as a part of a team using <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b> for the frontend, while the backend was built in <b>PHP</b> with MariaDB managing the database. Development took place locally on an Apache server using the <b>XAMPP</b> software package.</p>
+                  <br>
+                  <p>I Primarily served as a backend developer, but remained adaptable as to support frontend development and avoid workflow delays. Key responsibilities included designing the database schema, optimizing queries, and creating multiple MVC classes to manage database interactions. Additionally, I developed comprehensive unit tests for each class to ensure functionality, quality, and maintainability of the codebase.</p>
+                  <br>
+                  <p>Key skills required for this project included <b>full-stack web development</b>, <b>relational database creation/management</b>, version control with <b>GitHub</b>, and team collaboration using <b>AGILE methodologies</b> to manage workflow and meet deadlines. </p>
+                  <br>
+                </div>
 
                 
                 
@@ -68,7 +74,7 @@
                 <div class="github-card-container smallFadeInBottom">
                   <div class="github-card" onclick="window.open('https://github.com/OSmith132/FeedTrac', '_blank');">
                     <div class="card-header">
-                      <img id="profile-pic" src="" onerror="this.onerror=null; this.src='assets/icons/warning-icon.png';">
+                      <img class="github-card-img" id="profile-pic" src="" onerror="this.onerror=null; this.src='assets/icons/warning-icon.png';">
                       <div class="text-container">
                         <h2><a href="https://github.com/OSmith132/FeedTrac" target="_blank">FeedTrac</a></h2>
                         <p><a href="https://github.com/OSmith132" target="_blank">OSmith132</a></p>
@@ -89,82 +95,17 @@
                         <strong>Forks: </strong> <span id="forks">...</span>
                       </div>
                     </div>
+
+                    <img class = "github-card-icon" src="assets/icons/github-black-icon.png">
                   </div>
                 </div>
                 
-              
+                <!-- Fetch Data from Github API -->
+                <script src="scripts/fetchRepoData.js"></script>
                 <script>
-                  // Fetch repository information
-                  fetch('https://api.github.com/repos/OSmith132/FeedTrac')
-                    .then(response => response.json())
-                    .then(data => {
-                      document.getElementById('description').innerText = `${data.description || 'No description provided.'}`;
-                      document.getElementById('stars').innerText = data.stargazers_count;
-                      document.getElementById('forks').innerText = data.forks_count;
-                    })
-                    .catch(error => {
-                      console.error('Error fetching repository data:', error);
-                    });
-
-                  // Fetch user profile data
-                  fetch('https://api.github.com/users/OSmith132')
-                    .then(response => response.json())
-                    .then(data => {
-                      document.getElementById('profile-pic').src = data.avatar_url;
-                    })
-                    .catch(error => {
-                      console.error('Error fetching user profile data:', error);
-                    });
-
-                  // Fetch total commits
-                  async function fetchTotalCommits() {
-                    let totalCommits = 0;
-                    let page = 1;
-                    const perPage = 100;
-
-                    while (true) {
-                      const response = await fetch(`https://api.github.com/repos/OSmith132/FeedTrac/commits?per_page=${perPage}&page=${page}`);
-
-                      if (!response.ok) {
-                        console.error('Error fetching commits data:', response.statusText);
-                        document.getElementById('commits').innerText = 'Error fetching commits';
-                        return;
-                      }
-
-                      const data = await response.json();
-                      totalCommits += data.length;
-
-                      if (data.length < perPage) {
-                        break;
-                      }
-
-                      page++;
-                    }
-
-                    document.getElementById('commits').innerText = totalCommits;
-                  }
-
-                  fetchTotalCommits();
-
-                  // Fetch languages used in the repository
-                  fetch('https://api.github.com/repos/OSmith132/FeedTrac/languages')
-                    .then(response => response.json())
-                    .then(data => {
-                      // Convert the object to an array of entries and sort it by usage
-                      const sortedLanguages = Object.entries(data)
-                        .sort((a, b) => b[1] - a[1]) // Sort by usage
-                        .slice(0, 3); // Get the top 3
-
-                      // Map to a string format
-                      const languages = sortedLanguages.map(lang => lang[0]).join(', ');
-                      document.getElementById('languages').innerText = languages || 'No languages found';
-                    })
-                    .catch(error => {
-                      console.error('Error fetching languages data:', error);
-                      document.getElementById('languages').innerText = 'Error fetching languages';
-                    });
-
+                  fetchRepoData('OSmith132', 'FeedTrac');
                 </script>
+
 
                 
                 
