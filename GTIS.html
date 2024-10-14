@@ -1,133 +1,144 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en-gb">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Oliver Smith</title>
-        <meta name="description" content="Oliver Smith's personal website">
-        <meta name="author" content="Oliver Smith">
+  <title>Oliver Smith</title>
+  <meta name="description" content="Oliver Smith's personal website">
+  <meta name="author" content="Oliver Smith">
 
-        <!-- Link to assets used -->
-        <link rel="icon" type="image/x-icon" href="assets/leaf-icon.png">
-        <script src="https://kit.fontawesome.com/7e1870387e.js" crossorigin="anonymous"></script>
+  <!-- Link to assets used -->
+  <link rel="icon" type="image/x-icon" href="assets/leaf-icon.png">
+  <script src="https://kit.fontawesome.com/7e1870387e.js" crossorigin="anonymous"></script>
 
-        <!-- Link to fonts used -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-        
-
-    
-        <!-- Link to Stylesheet -->
-        <link rel="stylesheet" href="stylesheets/main.css">
-
-        
-        <!-- Script to load header and footer functionality -->
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous">
-        </script>
-
-        <script> 
-        $(function(){
-        $("#header").load("header.html"); 
-        $("#footer").load("footer.html"); 
-        });
-        </script> 
-
-    </head>
-
-
-    <body>
-        <!-- Header -->
-        <div id="header"></div>
-
-
-        <!-- Main  -->
-        <main>
-
-            <!-- Title -->
-            <div class="project-title">
-                Graph Theory Interactive Sandbox
-              </div>
-
-              <div class="project-textbox">
-                <p>The Graph Theory Interactive Sandbox (GTIS) is a software application developed in <b>Java</b> using <b>LibGDX's Scene 2D</b> for an graphical interface and <b>Gradle</b> for efficient build automation.</p>
-                <br>
-                <p>This application was created to produce interactive visualizations of complex <b>network algorithms</b> such as <b>Dijkstra's Algorithm</b> and <b>Critical Path Analysis (CPA)</b>. It serves as an educational tool designed enhancing student's understanding of algorithmic processes by enabling them to execute various algorithms on custom-built graphs.</p>
-                <br>
-                <p>Developing this application required a <b>strong foundation in network theory</b> and a deep understanding of commonly used algorithms, such as <b>shortest path algorithms</b>, <b>spanning trees</b>, and <b>critical path methods</b>. Additionally, knowledge of graph structures, optimization techniques, and their practical applications was essential for implementing efficient and accurate visualizations.</p>
-                <br>
-                <p>I developed this project <b>independently</b> to address the distinct lack of resources available for students to understand and practice the graph optimisation algorithms, as outlined in the A-Level Further Maths specification.</p>
-              </div>
-        
-
-            <div class="github-card-container smallFadeInBottom">
-                <div class="github-card" onclick="window.open('https://github.com/OSmith132/GTIS', '_blank');">
-                  <div class="card-header">
-                    <img class="github-card-img" id="profile-pic" src="" onerror="this.onerror=null; this.src='assets/icons/warning-icon.png';">
-                    <div class="text-container">
-                      <h2><a href="https://github.com/OSmith132/GTIS" target="_blank">GTIS</a></h2>
-                      <p><a href="https://github.com/OSmith132" target="_blank">OSmith132</a></p>
-                    </div>
-                  </div>
-                  <p id="description" class="description">Description: Loading...</p>
-                  <div class="languages ">
-                    <strong>Languages: </strong> <span id="languages">...</span>
-                  </div>
-                  <div class="stats">
-                    <div class="stat-item">
-                      <strong>Commits: </strong> <span id="commits">...</span>
-                    </div>
-                    <div class="stat-item">
-                      <strong>Stars: </strong> <span id="stars">...</span>
-                    </div>
-                    <div class="stat-item">
-                      <strong>Forks: </strong> <span id="forks">...</span>
-                    </div>
-                  </div>
-
-                  <img class = "github-card-icon" src="assets/icons/github-black-icon.png">
-                </div>
-              </div>
-              
-              <!-- Fetch Data from Github API -->
-              <script src="scripts/fetchRepoData.js"></script>
-              <script>
-                fetchRepoData('OSmith132', 'GTIS');
-              </script>
+  <!-- Link to fonts used -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
 
 
 
 
+  <!-- Link to Stylesheet -->
+  <link rel="stylesheet" href="stylesheets/main.css">
+
+
+  <!-- Script to load header and footer functionality -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+
+  <script>
+    $(function () {
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+    });
+  </script>
+
+</head>
+
+
+<body>
+  <!-- Header -->
+  <div id="header"></div>
+
+
+  <!-- Main  -->
+  <main>
+
+    <!-- Title -->
+    <div class="project-title">
+      Graph Theory Interactive Sandbox
+    </div>
+
+    <div class="project-textbox">
+      <p>The Graph Theory Interactive Sandbox (GTIS) is a software application developed in <b>Java</b> using
+        <b>LibGDX's Scene 2D</b> for an graphical interface and <b>Gradle</b> for efficient build automation.</p>
+      <br>
+      <p>This application was created to produce interactive visualizations of complex <b>network algorithms</b> such as
+        <b>Dijkstra's Algorithm</b> and <b>Critical Path Analysis (CPA)</b>. It serves as an educational tool designed
+        enhancing student's understanding of algorithmic processes by enabling them to execute various algorithms on
+        custom-built graphs.</p>
+      <br>
+      <p>Developing this application required a <b>strong foundation in network theory</b> and a deep understanding of
+        commonly used algorithms, such as <b>shortest path algorithms</b>, <b>spanning trees</b>, and <b>critical path
+          methods</b>. Additionally, knowledge of graph structures, optimization techniques, and their practical
+        applications was essential for implementing efficient and accurate visualizations.</p>
+      <br>
+      <p>I developed this project <b>independently</b> to address the distinct lack of resources available for students
+        to understand and practice the graph optimisation algorithms, as outlined in the A-Level Further Maths
+        specification.</p>
+    </div>
+
+
+    <div class="github-card-container smallFadeInBottom">
+      <div class="github-card" onclick="window.open('https://github.com/OSmith132/GTIS', '_blank');">
+        <div class="card-header">
+          <img class="github-card-img" id="profile-pic" src=""
+            onerror="this.onerror=null; this.src='assets/icons/warning-icon.png';">
+          <div class="text-container">
+            <h2><a href="https://github.com/OSmith132/GTIS" target="_blank">GTIS</a></h2>
+            <p><a href="https://github.com/OSmith132" target="_blank">OSmith132</a></p>
+          </div>
+        </div>
+        <p id="description" class="description">Description: Loading...</p>
+        <div class="languages ">
+          <strong>Languages: </strong> <span id="languages">...</span>
+        </div>
+        <div class="stats">
+          <div class="stat-item">
+            <strong>Commits: </strong> <span id="commits">...</span>
+          </div>
+          <div class="stat-item">
+            <strong>Stars: </strong> <span id="stars">...</span>
+          </div>
+          <div class="stat-item">
+            <strong>Forks: </strong> <span id="forks">...</span>
+          </div>
+        </div>
+
+        <img class="github-card-icon" src="assets/icons/github-black-icon.png">
+      </div>
+    </div>
+
+    <!-- Fetch Data from Github API -->
+    <script src="scripts/fetchRepoData.js"></script>
+    <script>
+      fetchRepoData('OSmith132', 'GTIS');
+    </script>
 
 
 
-          
-            <div class="pdfViewerContainer">
-                    
-                    <button class="toggleButton">
-                        GTIS Project Documentation
-                        <i class="fas fa-chevron-down arrow"></i> <!-- Down arrow initially -->
-                    </button>
-                    <div class="pdfViewer">
-                        <embed src="assets/Documentation/Oliver Smith - GTIS Project Documentation.pdf#toolbar=0&navpanes=0&scrollbar=0" style="height: 100vh; width: 80vw;" />
-                    </div>
-             </div>
 
-            
-            
 
-        </main>
 
-        
-            <!-- Footer -->
-        <div id="footer"></div>
 
-    </body>
+
+    <div class="pdfViewerContainer">
+
+      <button class="toggleButton">
+        GTIS Project Documentation
+        <i class="fas fa-chevron-down arrow"></i> <!-- Down arrow initially -->
+      </button>
+      <div class="pdfViewer">
+        <embed src="assets/Documentation/Oliver Smith - GTIS Project Documentation.pdf#toolbar=0&navpanes=0&scrollbar=0"
+          style="height: 100vh; width: 80vw;" />
+      </div>
+    </div>
+
+
+
+
+  </main>
+
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+</body>
 
 </html>

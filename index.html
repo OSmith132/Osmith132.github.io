@@ -1,71 +1,71 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en-gb">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Oliver Smith</title>
-        <meta name="description" content="Oliver Smith's personal website">
-        <meta name="author" content="Oliver Smith">
+    <title>Oliver Smith</title>
+    <meta name="description" content="Oliver Smith's personal website">
+    <meta name="author" content="Oliver Smith">
 
-        <!-- Link to assets used -->
-        <link rel="icon" type="image/x-icon" href="assets/icons/leaf-icon.png">
-        <script src="https://kit.fontawesome.com/7e1870387e.js" crossorigin="anonymous"></script>
+    <!-- Link to assets used -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/leaf-icon.png">
+    <script src="https://kit.fontawesome.com/7e1870387e.js" crossorigin="anonymous"></script>
 
-        <!-- Link to fonts used -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Link to fonts used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 
-        
 
-    
-        <!-- Link to Stylesheet -->
-        <link rel="stylesheet" href="stylesheets/main.css">
 
-        
-        <!-- Script to load header and footer functionality -->
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous">
+
+    <!-- Link to Stylesheet -->
+    <link rel="stylesheet" href="stylesheets/main.css">
+
+
+    <!-- Script to load header and footer functionality -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
         </script>
 
-        <script> 
-        $(function(){
-        $("#header").load("header.html"); 
-        $("#footer").load("footer.html"); 
-        $("#project").load("projects.html"); 
-        $("#certifications").load("certifications.html");
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+            $("#project").load("projects.html");
+            $("#certifications").load("certifications.html");
         });
-        </script> 
+    </script>
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <script>
-            // Disable scroll restoration so the page doesn't maintain scroll position after reload
-            if ('scrollRestoration' in history) {
-                history.scrollRestoration = 'manual';
-            }
-    
-            // Scroll to the top when the page is reloaded
-            window.onload = function () {
-                window.scrollTo(0, 0);
-            };
-        </script>
+    <script>
+        // Disable scroll restoration so the page doesn't maintain scroll position after reload
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
 
-
-        <!-- Header -->
-        <div id="header"></div>
+        // Scroll to the top when the page is reloaded
+        window.onload = function () {
+            window.scrollTo(0, 0);
+        };
+    </script>
 
 
+    <!-- Header -->
+    <div id="header"></div>
 
-        <!-- Main  -->        
-        <main>
-            <div class="index-main-title">
+
+
+    <!-- Main  -->
+    <main>
+        <div class="index-main-title">
 
             <!-- Image of myself -->
             <img id="index-image" class="fadeInBottom" alt="Image of myself">
@@ -80,40 +80,44 @@
 
             <!-- Info about myself  -->
             <div class="index-main-title-textbox fadeInBottom">
-                <b><h1>My name is Oliver Smith.</h1></b>
-                <p>I am a third year Computer Science student at the University of Lincoln with a keen interest for software development and artificial intelligence.</p>
-                <p>With a proven ability for fast-paced, hands-on learning and a commitment to acquiring and applying new skills, I am continuously seeking opportunities to expand my knowledge and expertise.</p>
+                <b>
+                    <h1>My name is Oliver Smith.</h1>
+                </b>
+                <p>I am a third year Computer Science student at the University of Lincoln with a keen interest for
+                    software development and artificial intelligence.</p>
+                <p>With a proven ability for fast-paced, hands-on learning and a commitment to acquiring and applying
+                    new skills, I am continuously seeking opportunities to expand my knowledge and expertise.</p>
                 <p>I am actively seeking a masters degree in computer science to help kickstart my future career.</p>
                 <p><b>Feel free to explore my website to learn more about me and my projects.</b></p>
             </div>
 
 
-            </div>
-        </main>
+        </div>
+    </main>
 
 
 
-        <!-- Certifications -->
-        <div id="certifications"></div>
-
-        
-
-
+    <!-- Certifications -->
+    <div id="certifications"></div>
 
 
 
 
 
-        <!-- Project showcase -->
-        <div id="project"></div>
-        
 
 
 
-        
-            <!-- Footer -->
-        <div id="footer"></div>
 
-    </body>
+    <!-- Project showcase -->
+    <div id="project"></div>
+
+
+
+
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+</body>
 
 </html>

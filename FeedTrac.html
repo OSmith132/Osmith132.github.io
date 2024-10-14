@@ -1,122 +1,120 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en-gb">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Oliver Smith</title>
-        <meta name="description" content="Oliver Smith's personal website">
-        <meta name="author" content="Oliver Smith">
+  <title>Oliver Smith</title>
+  <meta name="description" content="Oliver Smith's personal website">
+  <meta name="author" content="Oliver Smith">
 
-        <!-- Link to assets used -->
-        <link rel="icon" type="image/x-icon" href="assets/leaf-icon.png">
-        <script src="https://kit.fontawesome.com/7e1870387e.js" crossorigin="anonymous"></script>
+  <!-- Link to assets used -->
+  <link rel="icon" type="image/x-icon" href="assets/leaf-icon.png">
+  <script src="https://kit.fontawesome.com/7e1870387e.js" crossorigin="anonymous"></script>
 
-        <!-- Link to fonts used -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        
-
-    
-        <!-- Link to Stylesheet -->
-        <link rel="stylesheet" href="stylesheets/main.css">
-
-        
-        <!-- Script to load header and footer functionality -->
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous">
-        </script>
-
-        
-
-        <script> 
-        $(function(){
-        $("#header").load("header.html"); 
-        $("#footer").load("footer.html"); 
-        });
-        </script> 
-
-    </head>
+  <!-- Link to fonts used -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
-    <body>
-        <!-- Header -->
-        <div id="header"></div>
 
-        <!-- Main  -->
-        <main>
-
-                
-                <!-- Title -->
-                <div class="project-title">
-                  FeedTrac
-                </div>
-
-                <div class="project-textbox">
-                  <p>FeedTrac is a web-based feedback tracking application developed for academic institutions. It allowed students to submit detailed feedback reports, including urgency, tags, and descriptions, which could then be accessed by relevant staff members for review in an orderly and efficient manner.</p>
-                  <br>
-                  <p>The project was developed as a part of a team using <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b> for the frontend, while the backend was built in <b>PHP</b> with MariaDB managing the database. Development took place locally on an Apache server using the <b>XAMPP</b> software package.</p>
-                  <br>
-                  <p>I Primarily served as a backend developer, but remained adaptable as to support frontend development and avoid workflow delays. Key responsibilities included designing the database schema, optimizing queries, and creating multiple MVC classes to manage database interactions. Additionally, I developed comprehensive unit tests for each class to ensure functionality, quality, and maintainability of the codebase.</p>
-                  <br>
-                  <p>Key skills required for this project included <b>full-stack web development</b>, <b>relational database creation/management</b>, version control with <b>GitHub</b>, and team collaboration using <b>AGILE methodologies</b> to manage workflow and meet deadlines. </p>
-                  <br>
-                </div>
-
-                
-                
-                
-                <div class="github-card-container smallFadeInBottom">
-                  <div class="github-card" onclick="window.open('https://github.com/OSmith132/FeedTrac', '_blank');">
-                    <div class="card-header">
-                      <img class="github-card-img" id="profile-pic" src="" onerror="this.onerror=null; this.src='assets/icons/warning-icon.png';">
-                      <div class="text-container">
-                        <h2><a href="https://github.com/OSmith132/FeedTrac" target="_blank">FeedTrac</a></h2>
-                        <p><a href="https://github.com/OSmith132" target="_blank">OSmith132</a></p>
-                      </div>
-                    </div>
-                    <p id="description" class="description">Description: Loading...</p>
-                    <div class="languages ">
-                      <strong>Languages: </strong> <span id="languages">...</span>
-                    </div>
-                    <div class="stats">
-                      <div class="stat-item">
-                        <strong>Commits: </strong> <span id="commits">...</span>
-                      </div>
-                      <div class="stat-item">
-                        <strong>Stars: </strong> <span id="stars">...</span>
-                      </div>
-                      <div class="stat-item">
-                        <strong>Forks: </strong> <span id="forks">...</span>
-                      </div>
-                    </div>
-
-                    <img class = "github-card-icon" src="assets/icons/github-black-icon.png">
-                  </div>
-                </div>
-                
-                <!-- Fetch Data from Github API -->
-                <script src="scripts/fetchRepoData.js"></script>
-                <script>
-                  fetchRepoData('OSmith132', 'FeedTrac');
-                </script>
+  <!-- Link to Stylesheet -->
+  <link rel="stylesheet" href="stylesheets/main.css">
 
 
-                
-                
-                
-                
-                
-                
+  <!-- Script to load header and footer functionality -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+
+
+
+  <script>
+    $(function () {
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+    });
+  </script>
+
+</head>
+
+
+<body>
+  <!-- Header -->
+  <div id="header"></div>
+
+  <!-- Main  -->
+  <main>
+
+
+    <!-- Title -->
+    <div class="project-title">
+      FeedTrac
+    </div>
+
+    <div class="project-textbox">
+      <p>FeedTrac is a web-based feedback tracking application developed for academic institutions. It allowed students
+        to submit detailed feedback reports, including urgency, tags, and descriptions, which could then be accessed by
+        relevant staff members for review in an orderly and efficient manner.</p>
+      <br>
+      <p>The project was developed as a part of a team using <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b> for the
+        frontend, while the backend was built in <b>PHP</b> with MariaDB managing the database. Development took place
+        locally on an Apache server using the <b>XAMPP</b> software package.</p>
+      <br>
+      <p>I Primarily served as a backend developer, but remained adaptable as to support frontend development and avoid
+        workflow delays. Key responsibilities included designing the database schema, optimizing queries, and creating
+        multiple MVC classes to manage database interactions. Additionally, I developed comprehensive unit tests for
+        each class to ensure functionality, quality, and maintainability of the codebase.</p>
+      <br>
+      <p>Key skills required for this project included <b>full-stack web development</b>, <b>relational database
+          creation/management</b>, version control with <b>GitHub</b>, and team collaboration using <b>AGILE
+          methodologies</b> to manage workflow and meet deadlines. </p>
+      <br>
+    </div>
 
 
 
 
+    <div class="github-card-container smallFadeInBottom">
+      <div class="github-card" onclick="window.open('https://github.com/OSmith132/FeedTrac', '_blank');">
+        <div class="card-header">
+          <img class="github-card-img" id="profile-pic" src=""
+            onerror="this.onerror=null; this.src='assets/icons/warning-icon.png';">
+          <div class="text-container">
+            <h2><a href="https://github.com/OSmith132/FeedTrac" target="_blank">FeedTrac</a></h2>
+            <p><a href="https://github.com/OSmith132" target="_blank">OSmith132</a></p>
+          </div>
+        </div>
+        <p id="description" class="description">Description: Loading...</p>
+        <div class="languages ">
+          <strong>Languages: </strong> <span id="languages">...</span>
+        </div>
+        <div class="stats">
+          <div class="stat-item">
+            <strong>Commits: </strong> <span id="commits">...</span>
+          </div>
+          <div class="stat-item">
+            <strong>Stars: </strong> <span id="stars">...</span>
+          </div>
+          <div class="stat-item">
+            <strong>Forks: </strong> <span id="forks">...</span>
+          </div>
+        </div>
+
+        <img class="github-card-icon" src="assets/icons/github-black-icon.png">
+      </div>
+    </div>
+
+    <!-- Fetch Data from Github API -->
+    <script src="scripts/fetchRepoData.js"></script>
+    <script>
+      fetchRepoData('OSmith132', 'FeedTrac');
+    </script>
 
 
 
@@ -130,30 +128,43 @@
 
 
 
-                
-
-
-                <!-- PDF Viewer -->
-                <div class="pdfViewerContainer">
-                    
-                    <button class="toggleButton">
-                        FeedTrac Project Documentation
-                        <i class="fas fa-chevron-down arrow"></i> <!-- Down arrow initially -->
-                    </button>
-                    <div class="pdfViewer">
-                        <embed src="assets/Documentation/Team_Software_engineering.pdf#toolbar=0&navpanes=0&scrollbar=0" style="height: 100vh; width: 80vw;" />
-                    </div>
-                </div>
 
 
 
-        </main>
-        
-        <!-- Footer -->
-        <div id="footer"></div>
 
-    </body>
 
-    
+
+
+
+
+
+
+
+
+
+
+    <!-- PDF Viewer -->
+    <div class="pdfViewerContainer">
+
+      <button class="toggleButton">
+        FeedTrac Project Documentation
+        <i class="fas fa-chevron-down arrow"></i> <!-- Down arrow initially -->
+      </button>
+      <div class="pdfViewer">
+        <embed src="assets/Documentation/Team_Software_engineering.pdf#toolbar=0&navpanes=0&scrollbar=0"
+          style="height: 100vh; width: 80vw;" />
+      </div>
+    </div>
+
+
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+</body>
+
+
 
 </html>
