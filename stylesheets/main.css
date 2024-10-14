@@ -1003,21 +1003,10 @@ footer a:hover {
     border-radius: 5px; /* Optional: Add rounded corners */
 }
 
-@media (max-width: 720px) { /* Adjust based on your breakpoint */
+@media (max-width: 768px) { /* Adjust based on your breakpoint */
     .desktop {
         display: none; /* Hide the desktop view on mobile */
     }
-    .mobile {
-        display: block; /* Show the mobile view on mobile */
-    }
 }
 
-@media (min-width: 720px) { /* Adjust based on your breakpoint */
-    .desktop {
-        display: block; /* Show the desktop view on PC */
-    }
-    .mobile {
-        display: none; /* Hide the mobile view on PC */
-    }
-}
 
