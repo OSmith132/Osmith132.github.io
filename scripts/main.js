@@ -126,20 +126,27 @@ document.querySelector(".toggleButton").addEventListener("click", function () {
     pdfViewer.classList.remove("active");
     if (!isMobile) {
       arrow.classList.remove("rotate"); // Only rotate arrow on desktop
+      // Set border radius for hidden state on desktop
+      toggleButton.style.borderBottomLeftRadius = "1vmin";
+      toggleButton.style.borderBottomRightRadius = "1vmin";
     }
-    // Set border radius for hidden state
-    toggleButton.style.borderBottomLeftRadius = "1vh";
-    toggleButton.style.borderBottomRightRadius = "1vh";
   } else {
     pdfViewer.classList.add("active");
     if (!isMobile) {
       arrow.classList.add("rotate"); // Rotate arrow upwards on desktop
+      // Set border radius for visible state on desktop
+      toggleButton.style.borderBottomLeftRadius = "0";
+      toggleButton.style.borderBottomRightRadius = "0";
     }
-    // Set border radius for visible state
-    toggleButton.style.borderBottomLeftRadius = "0";
-    toggleButton.style.borderBottomRightRadius = "0";
+  }
+
+  // Always ensure mobile has a border radius of 1vmin
+  if (isMobile) {
+    toggleButton.style.borderBottomLeftRadius = "1vmin";
+    toggleButton.style.borderBottomRightRadius = "1vmin";
   }
 });
+
 
 
 const cardsContainer = document.querySelector(".container");
