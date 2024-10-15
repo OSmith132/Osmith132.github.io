@@ -848,13 +848,25 @@ footer a:hover {
     max-height: 0; /* Collapsed initially */
     opacity: 0;
     transition: max-height 0.5s ease, opacity 0.5s ease;
+
+
+    /* position: relative; */ /* This might fix some issues */
 }
 
 .pdfViewer.active {
     max-height: 100vmin; 
-
     opacity: 1;
 }
+
+
+
+
+@media (max-width: 720px) { /* Adjust based on your breakpoint */
+    .desktop {
+        display: none; /* Hide the desktop view on mobile */
+    }
+}
+
 
 .toggleButton {
     background-color: var(--text);
@@ -992,21 +1004,5 @@ footer a:hover {
 
 
 
-.pdfViewerContainer {
-    position: relative; /* For positioning */
-}
-
-.pdfViewer {
-    max-width: 100%; /* Ensures the PDF viewer is responsive */
-    overflow: hidden; /* Hides overflow */
-    border: 1px solid #ccc; /* Optional: Add a border */
-    border-radius: 5px; /* Optional: Add rounded corners */
-}
-
-@media (max-width: 768px) { /* Adjust based on your breakpoint */
-    .desktop {
-        display: none; /* Hide the desktop view on mobile */
-    }
-}
 
 

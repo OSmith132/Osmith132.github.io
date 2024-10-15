@@ -113,25 +113,34 @@ function togglePasswordVisibility(passwordID) {
   }
 }
 
+
 document.querySelector(".toggleButton").addEventListener("click", function () {
   const pdfViewer = document.querySelector(".pdfViewer");
   const arrow = document.querySelector(".arrow");
   const toggleButton = document.querySelector(".toggleButton");
 
+  // Check if the user is on a mobile device
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
   if (pdfViewer.classList.contains("active")) {
     pdfViewer.classList.remove("active");
-    arrow.classList.remove("rotate"); // Reset arrow direction
+    if (!isMobile) {
+      arrow.classList.remove("rotate"); // Only rotate arrow on desktop
+    }
     // Set border radius for hidden state
     toggleButton.style.borderBottomLeftRadius = "1vh";
     toggleButton.style.borderBottomRightRadius = "1vh";
   } else {
     pdfViewer.classList.add("active");
-    arrow.classList.add("rotate"); // Rotate arrow upwards
+    if (!isMobile) {
+      arrow.classList.add("rotate"); // Rotate arrow upwards on desktop
+    }
     // Set border radius for visible state
     toggleButton.style.borderBottomLeftRadius = "0";
     toggleButton.style.borderBottomRightRadius = "0";
   }
 });
+
 
 const cardsContainer = document.querySelector(".container");
 
