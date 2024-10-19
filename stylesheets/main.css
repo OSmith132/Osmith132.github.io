@@ -651,6 +651,7 @@ footer a:hover {
 .github-card-container{
 
     animation-duration: 1s;
+    animation-delay: 1s;
     animation-fill-mode: both;
     overflow: visible;
     display: flex;
@@ -717,10 +718,20 @@ footer a:hover {
     flex-direction: column;
 }
 
+.github-card h3 {
+    color: var(--header-light);
+    margin: 0; 
+    font-size: 1.75vmin;
+}
+
 .github-card h2 {
+    color: var(--header-light);
+    text-decoration: none;
     margin: 0; 
     font-size: 3vmin;
+    
 }
+
 
 .github-card p {
     margin: 0; 
@@ -728,12 +739,6 @@ footer a:hover {
     text-align: left;
 }
 
-/* Link styles */
-.github-card a {
-    color: var(--header-light);
-    text-decoration: none;
-    
-}
 
 .github-card a:hover {
     text-decoration: underline;
@@ -782,6 +787,10 @@ footer a:hover {
     font-weight: 600; 
     text-align: center;
     margin: 13vh auto 0px auto;
+
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    overflow: visible;
 }
 
 .project-textbox {
@@ -803,6 +812,10 @@ footer a:hover {
     box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.1); 
 
     transition: box-shadow 0.2s ease-in-out;
+
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    overflow: visible;
 }
 
 .project-textbox:hover {
@@ -825,7 +838,9 @@ footer a:hover {
     
     margin: 5vmin auto auto; 
 
-    
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    overflow: visible;
 
     flex: 1; /* This will allow the main content to grow and fill the available space */
 }

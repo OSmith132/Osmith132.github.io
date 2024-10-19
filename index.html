@@ -73,8 +73,16 @@
             <!-- Retrieve random image of myself -->
             <script>
                 const imagePath = "assets/me/index-image-" + Math.floor(Math.random() * 5) + ".png";
-                //const imagePath = "assets/index-image-5.png";
-                document.getElementById('index-image').src = imagePath;
+                
+                // Preload the image
+                const img = new Image();
+                img.src = imagePath;
+                
+                img.onload = function() {
+                    // Once the image is loaded, set the src and display it
+                    document.getElementById('index-image').src = imagePath;
+                    document.getElementById('index-image').style.display = 'block';
+                };
             </script>
 
 
