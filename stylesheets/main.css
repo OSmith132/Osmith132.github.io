@@ -328,6 +328,8 @@ footer a:hover {
     box-shadow: 0 1vmin 2vmin rgba(10, 10, 10, 0.25);
     position: absolute;
 
+    background-color: var(--showcase-box-element);
+
     animation-duration: 1.5s;
     animation-fill-mode: both;
 }

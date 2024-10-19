@@ -68,21 +68,14 @@
         <div class="index-main-title">
 
             <!-- Image of myself -->
-            <img id="index-image" class="fadeInBottom" alt="Image of myself">
+            <img id="index-image" class="fadeInBottom" >
 
             <!-- Retrieve random image of myself -->
             <script>
                 const imagePath = "assets/me/index-image-" + Math.floor(Math.random() * 5) + ".png";
-                
-                // Preload the image
-                const img = new Image();
-                img.src = imagePath;
-                
-                img.onload = function() {
-                    // Once the image is loaded, set the src and display it
-                    document.getElementById('index-image').src = imagePath;
-                    document.getElementById('index-image').style.display = 'block';
-                };
+
+                document.getElementById('index-image').src = imagePath;
+
             </script>
 
 
