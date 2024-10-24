@@ -51,7 +51,7 @@ function setColourMode(lightMode) {
     localStorage.setItem("colourMode", "dark");
   } else {
     // ENABLE LIGHT MODE
-    root.style.setProperty("--background", "#f5ede4");
+    root.style.setProperty("--background", "#f0e5d8");
     // root.style.setProperty("--header", "#546666");
     root.style.setProperty("--text", "#535353");
     // root.style.setProperty("--alternate-text", "white");
