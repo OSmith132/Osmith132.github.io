@@ -118,6 +118,7 @@ header {
     gap: 2vmin;
     justify-content: flex-start;
     max-width: 90%;
+    padding: 0.75vmin;
 
 }
 
@@ -126,8 +127,10 @@ header {
     background-color: var(--header); 
     border: 0.3vmin solid var(--header-light); 
     border-radius: 20%;
-    height: 3.5vmin;
-    width: 3.5vmin;
+
+    height: 4vmin;
+    width: 4vmin;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,7 +138,6 @@ header {
     padding: 0.2vmin;
     flex-shrink: 0;
     
-
 }
 
 .header-button:hover {
@@ -146,7 +148,7 @@ header {
 
 .header-button i {
     color: var(--header-button);
-    font-size: 2vmin;
+    font-size: 2.25vmin;
 }
 
 
@@ -167,6 +169,9 @@ header {
     }
     .header-logo-text {
         font-size: 2.6vmin;
+    }
+    .header-box {
+        gap: 1.5vmin;
     }
 
 }

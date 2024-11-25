@@ -1,4 +1,21 @@
 <header>
+
+
+
+    <div class="header-box">
+         <!-- Back to homepage -->
+         <button class="header-button" onclick="location.href = 'index.html'" title="Go to Homepage">
+            <i class="fa-solid fa-house"></i>
+        </button>
+
+        <!-- Light / Dark Mode !-->
+        <button id="colour-mode-button" class="header-button" onclick="toggleColourMode()" title="Enable dark Mode">
+            <i class="fa-solid fa-moon"></i>
+            <script>console.log("Stored Colour Mode:", localStorage.getItem("colourMode"));</script>
+        </button>
+       
+    </div>
+
     <div class="header-box">
 
         <!-- Github !-->
@@ -44,17 +61,6 @@
 
 
 
-    <div class="header-box">
-        <!-- Light / Dark Mode !-->
-        <button id="colour-mode-button" class="header-button" onclick="toggleColourMode()" title="Enable dark Mode">
-            <i class="fa-solid fa-moon"></i>
-        </button>
-
-        <!-- Back to homepage -->
-        <button class="header-button" onclick="location.href = 'index.html'" title="Go to Homepage">
-            <i class="fa-solid fa-house"></i>
-        </button>
-    </div>
 
 
 </header>
