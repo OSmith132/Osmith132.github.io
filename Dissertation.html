@@ -42,6 +42,56 @@
 </head>
 
 
+
+
+<div class="github-card-container smallFadeInBottom">
+    <div class="github-card" onclick="window.open('https://github.com/OSmith132/Automated-Dental-Segmentation', '_blank');">
+      <div class="card-header">
+        <img class="github-card-img" id="profile-pic" src=""
+          onerror="this.onerror=null; this.src='assets/icons/warning-icon.png';">
+        <div class="text-container">
+          <h2 style="font-size: 2vmin; margin-right: 10%" >Automated Dental Segmentation</h2>
+          <h3>OSmith132</h3>
+        </div>
+      </div>
+      <p id="description" class="description">Description: Loading...</p>
+      <div class="languages ">
+        <strong>Languages: </strong> <span id="languages">...</span>
+      </div>
+      <div class="stats">
+        <div class="stat-item">
+          <strong>Commits: </strong> <span id="commits">...</span>
+        </div>
+        <div class="stat-item">
+          <strong>Stars: </strong> <span id="stars">...</span>
+        </div>
+        <div class="stat-item">
+          <strong>Forks: </strong> <span id="forks">...</span>
+        </div>
+      </div>
+
+      <img class="github-card-icon" src="assets/icons/github-black-icon.png">
+    </div>
+  </div>
+
+  <!-- Fetch Data from Github API -->
+  <script src="scripts/fetchRepoData.js"></script>
+  <script>
+    fetchRepoData('OSmith132', 'FeedTrac');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <body>
     <!-- Header -->
     <div id="header"></div>
