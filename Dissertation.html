@@ -2,6 +2,11 @@
 <html lang="en-gb">
 
 <head>
+    <script src="scripts/main.js"></script>
+    <script>
+        applySavedColourMode();
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -107,25 +112,84 @@
         </div>
 
         <div class="project-textbox smallFadeInBottom">
-            <p>My third year dissertation project with the goal to develop a<b> semantic segmentation model</b> using <b>U-Net architecture</b>, which identifies and categorises teeth, fillings, implants, and other dental structures from 2D dental images.</p>
-            <p>This project addresses the need for automated dental analysis, offering a reliable tool for dental professionals to aid in diagnosis and treatment.</p>
-            <p>The system will be trained on labeled dental images and validated through metrics like <b>pixel accuracy</b> and <b>IoU score</b> to ensure <b>strong performance</b> and <b>reliability</b> in clinical applications.</p>
-            <br>
-            <p>This project will be updated when further progress is made.</p>
+            
+          <p>Radiology has become an indispensable tool in modern healthcare, utilised across every sector of the 
+              medical field - from diagnosing broken bones to detecting cancer. The increasing reliance on radiology 
+              has led to a <b>surge in the volume of radiological data</b>, which continues to grow at a <b>vastly disproportionate rate</b> 
+              compared to the number of trained radiologists available to interpret it. As the demand for these services 
+              continues to rise, access to <b>medical imaging remains limited</b> in many regions, with a significant percentage of the 
+              global population having <b>little or no access</b> to diagnostic tools.</p>
+          <br>
+          <p>This growing demand has placed significant strain on healthcare providers worldwide, who are often forced to 
+              compensate by pushing for increased productivity, drastically raising workloads. In some cases, radiologists may 
+              be expected to interpret an image every few seconds during a full workday. Such unrealistic expectations inevitably 
+              <b>heighten the risk of human error</b>, potentially overlooking critical information in highly sensitive cases.</p>
+          <br>
+          <p>These challenges have been a driving force behind the development of <b>artificial intelligence (AI)</b> in the medical 
+              field, with substantial efforts focused on advancing <b>AI-powered imaging</b>. Integrating <b>AI</b> into the 
+              <b>radiology workflow</b> can significantly improve efficiency and reduce the level of manual input needed for interpreting 
+              medical images. This helps alleviate pressure on radiologists, allowing them to concentrate on more complex cases, 
+              while also improving both diagnostic accuracy and patient outcomes. In addition, <b>AI-based tools</b> can expand 
+              access to radiological imaging worldwide, enabling more reliable remote diagnostics and reducing dependency 
+              on highly trained specialists.</p>
+          <br>
+          <p>This project addresses these challenges by developing a <b>semantic segmentation model</b> that identifies and categorises 
+              dental structures such as lesions, fillings, and implants from 2D dental radiographs. By automating the analysis of dental images, 
+              the project demonstrates how <b>AI</b> and <b>machine learning</b> can enhance diagnostic efficiency, providing dental professionals 
+              with a reliable tool to streamline the imaging process and alleviate workload pressures.</p>
+          <br>
+          <p>Initially, the project explored a modified <b>U-Net architecture</b>, which has proven effective in many areas of medical image analysis. 
+              However, with the rise of <b>transfer learning</b> and large <b>pre-trained foundation models</b>, the research shifted towards adapting 
+              general segmentation models such as <b>SAM</b> and <b>MedSAM</b>. These were fine-tuned with domain-specific adaptations to enhance 
+              performance for dental imaging tasks, supported by techniques such as <b>data augmentation</b> and <b>cross-validation</b> to improve 
+              robustness and generalisation.</p>
+          <br>
+          <p>The research evaluates whether <b>transfer learning</b> is an effective approach for developing a model that generalises 
+              across varied clinical environments while maintaining high accuracy. Beyond improving dental diagnostics, the project also 
+              highlights the potential for expanding access to dental radiography interpretation in remote regions with limited availability of 
+              trained professionals. Ultimately, the project demonstrates the transformative potential of <b>AI</b> and <b>deep learning</b> 
+              in addressing the demand for dental image analysis and reducing reliance on limited human resources.</p>
+
+
+        </div>
+
+
+
+
+        <div class="pdfViewerContainer smallFadeInBottom">
+
+            <button class="toggleButton">
+                Initial Project Outline&nbsp;&nbsp;-&nbsp;&nbsp;<i>(17/10/2024)</i>
+                <i class="fas fa-chevron-down arrow"></i> <!-- Down arrow initially -->
+            </button>
+            <div class="pdfViewer">
+                <embed src="assets/Documentation/Dissertation Interim Report.pdf" style="height: 100vh; width: 80vw;" />
+            </div>
         </div>
 
 
         <div class="pdfViewerContainer smallFadeInBottom">
 
             <button class="toggleButton">
-                Dissertation Project Documentation
+                Interim Report&nbsp;&nbsp;-&nbsp;&nbsp;<i>(30/1/25)</i>
                 <i class="fas fa-chevron-down arrow"></i> <!-- Down arrow initially -->
             </button>
             <div class="pdfViewer">
-                <embed src="assets/Documentation/Automated Dental Segmentation Outline.pdf" style="height: 100vh; width: 80vw;" />
+                <embed src="assets/Documentation/Dissertation Project Outline.pdf" style="height: 100vh; width: 80vw;" />
             </div>
         </div>
 
+
+        <div class="pdfViewerContainer smallFadeInBottom">
+
+            <button class="toggleButton">
+                Dissertation Thesis&nbsp;&nbsp;-&nbsp;&nbsp;<i>(8/5/25)</i>
+                <i class="fas fa-chevron-down arrow"></i> <!-- Down arrow initially -->
+            </button>
+            <div class="pdfViewer">
+                <embed src="assets/Documentation/Dissertation Thesis.pdf" style="height: 100vh; width: 80vw;" />
+            </div>
+        </div>
 
 
 

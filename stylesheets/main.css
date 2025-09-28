@@ -17,10 +17,13 @@ div {
 }
 
 
+
+
+
 :root {
-    /* Some of these are overridden in main.js -> setColourMode(lightMode) */
-    /* Default colours */
-    --background: #f0e5d8;
+    /* Default colours*/    
+    --background: #f0e5d8; 
+    /* background: #6e7266;*/
     --header: #293535;    
     --text: rgb(56, 56, 61);
     --text-hover: rgba(56, 56, 61, 0.8);
@@ -31,6 +34,21 @@ div {
     --showcase-box-element: rgba(200,200,200, 0.3);
     --showcase-box-element-hover: rgba(150,150,150, 0.3);
 }
+
+html.dark-mode {
+    /* Dark mode overrides */
+    --background: #6e7266;
+    --header: #293535;    
+    --text: #2e2e2e;
+    --text-hover: rgba(46,46,46,0.8);
+    --alternate-text: white;
+    --header-button: #e7d8c9;
+    --header-light: #5e6a5e;
+    --showcase-box: #a9a69b;
+    --showcase-box-element: rgba(160,160,160,0.3);
+    --showcase-box-element-hover: rgba(120,120,120,0.3);
+}
+
 
 ::selection {
     background-color: #8f958f;
@@ -347,7 +365,7 @@ footer a:hover {
     border-radius: 2vmin;
     padding: 1.5vmin;
     text-align: left;
-    font-size: 1.9vmin;
+    font-size: 2vmin;
  
 
     width: 80%;
