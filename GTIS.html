@@ -135,7 +135,7 @@
           <i class="fas fa-chevron-down arrow"></i> <!-- Down arrow initially -->
       </button>
 
-      <div class="pdfViewer desktop">
+      <div class="pdfViewer">
           <embed src="assets/Documentation/Oliver Smith - GTIS Project Documentation.pdf#toolbar=0&navpanes=0&scrollbar=0" 
               style="height: 100vh; width: 80vw;" />
       </div>
@@ -150,9 +150,6 @@
           if (isMobile) {
               // Open PDF in a new tab
               window.open('assets/Documentation/Oliver Smith - GTIS Project Documentation.pdf#toolbar=0&navpanes=0&scrollbar=0', '_blank');
-          } else {
-              // If on desktop, show the PDF embed (you can add additional logic here if needed)
-              document.querySelector('.desktop').style.display = 'block'; // Show the embedded PDF
           }
       });
   </script>
