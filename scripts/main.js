@@ -205,47 +205,63 @@ function clickableRow() {
 
 
 
+// PDF Viewer Toggle Functionality
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".pdfViewerContainer").forEach(container => {
+    const button = container.querySelector(".toggleButton");
+    const pdfViewer = container.querySelector(".pdfViewer");
+    const arrow = container.querySelector(".arrow");
+    
 
+    button.addEventListener("click", () => {
 
-document.querySelectorAll(".pdfViewerContainer").forEach(container => {
-  const button = container.querySelector(".toggleButton");
-  const pdfViewer = container.querySelector(".pdfViewer");
-  const arrow = container.querySelector(".arrow");
+      const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+      const isActive = pdfViewer.classList.contains("active");
 
-  button.addEventListener("click", () => {
-    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-    const isActive = pdfViewer.classList.contains("active");
+      // Close all viewers first
+      document.querySelectorAll(".pdfViewerContainer").forEach(otherContainer => {
+        const otherViewer = otherContainer.querySelector(".pdfViewer");
+        const otherArrow = otherContainer.querySelector(".arrow");
+        const otherButton = otherContainer.querySelector(".toggleButton");
 
-    // Close all viewers first
-    document.querySelectorAll(".pdfViewerContainer").forEach(otherContainer => {
-      const otherViewer = otherContainer.querySelector(".pdfViewer");
-      const otherArrow = otherContainer.querySelector(".arrow");
-      const otherButton = otherContainer.querySelector(".toggleButton");
+        otherViewer.classList.remove("active");
+        if (!isMobile) {
+          otherArrow.classList.remove("rotate");
+          otherButton.style.borderBottomLeftRadius = "1vmin";
+          otherButton.style.borderBottomRightRadius = "1vmin";
+        }
+      });
 
-      otherViewer.classList.remove("active");
-      if (!isMobile) {
-        otherArrow.classList.remove("rotate");
-        otherButton.style.borderBottomLeftRadius = "1vmin";
-        otherButton.style.borderBottomRightRadius = "1vmin";
+      // Toggle current one (open only if it wasn't already active)
+      if (!isActive) {
+        pdfViewer.classList.add("active");
+        if (!isMobile) {
+          arrow.classList.add("rotate");
+          button.style.borderBottomLeftRadius = "0";
+          button.style.borderBottomRightRadius = "0";
+        }
+      } else {
+        if (isMobile) {
+          button.style.borderBottomLeftRadius = "1vmin";
+          button.style.borderBottomRightRadius = "1vmin";
+        }
       }
     });
-
-    // Toggle current one (open only if it wasn't already active)
-    if (!isActive) {
-      pdfViewer.classList.add("active");
-      if (!isMobile) {
-        arrow.classList.add("rotate");
-        button.style.borderBottomLeftRadius = "0";
-        button.style.borderBottomRightRadius = "0";
-      }
-    } else {
-      if (isMobile) {
-        button.style.borderBottomLeftRadius = "1vmin";
-        button.style.borderBottomRightRadius = "1vmin";
-      }
-    }
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
