@@ -418,6 +418,8 @@ footer a:hover {
     overflow: visible;
 }
 
+
+/* This needs to be changed, this is a bit of a hack */
 .project-container-1 {
     margin-top: 5vmin; 
     animation-delay: 1s;
@@ -441,6 +443,10 @@ footer a:hover {
 
 .project-container-6 {
     animation-delay: 2.2s;
+}
+
+.project-container-7 {
+    animation-delay: 2.4s;
 }
 
 /* Main container for the project showcase */
@@ -698,7 +704,7 @@ footer a:hover {
 
 
     max-height: 15vmin;
-    max-width: 35vw;
+    max-width: 25vw;
     
 
     box-shadow: 0 0.2vmin 1vmin rgba(10, 10, 10, 0.15);
